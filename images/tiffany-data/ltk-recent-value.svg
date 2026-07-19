@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 232" role="img" aria-labelledby="chart-title chart-description">
+<title id="chart-title">Recent LTK orders delivered more value</title>
+<desc id="chart-description">The latest 30 days generated 44.4 percent of the 90-day commission total. Compared with the preceding 60 days, commission per order was 21 dollars and 14 cents versus 9 dollars and 90 cents, items per order were 2.63 versus 1.72, and average commission per day was 281 dollars and 12 cents versus 175 dollars and 81 cents.</desc>
+<style>
+text{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;fill:#1A1A1A}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.8px;fill:#D20001}
+.title{font-size:34px;font-weight:700;letter-spacing:-.7px;fill:#0212EE}
+.subtitle{font-size:15px;fill:#5D5D56}
+.metric{font-size:31px;font-weight:700;fill:#0212EE}
+.metric-sm{font-size:24px;font-weight:700;fill:#0212EE}
+.label{font-size:17px;font-weight:700}
+.small{font-size:14px;fill:#5D5D56}
+.axis{font-size:14px;fill:#5D5D56}
+.value{font-size:16.5px;font-weight:700}
+</style>
+<rect width="360" height="232" rx="8" fill="#FAF9F1"/>
+<text x="14.0" y="24.0" class="label" text-anchor="start">Commission / order</text>
+<text x="346.0" y="24.0" class="value" text-anchor="end">2.1×</text>
+<text x="14.0" y="45.0" class="value" text-anchor="start">$9.90 → $21.14</text>
+<rect x="14" y="54" width="332" height="8" rx="4" fill="#D7D7CD"/>
+<rect x="14" y="54" width="155.4" height="8" rx="4" fill="#FEC6E9"/>
+<rect x="14" y="66" width="332.0" height="8" rx="4" fill="#0212EE"/>
+<text x="14.0" y="88.0" class="label" text-anchor="start">Items per order</text>
+<text x="346.0" y="88.0" class="value" text-anchor="end">1.5×</text>
+<text x="14.0" y="109.0" class="value" text-anchor="start">1.72 → 2.63</text>
+<rect x="14" y="118" width="332" height="8" rx="4" fill="#D7D7CD"/>
+<rect x="14" y="118" width="216.8" height="8" rx="4" fill="#FEC6E9"/>
+<rect x="14" y="130" width="332.0" height="8" rx="4" fill="#0212EE"/>
+<text x="14.0" y="152.0" class="label" text-anchor="start">Daily commission</text>
+<text x="346.0" y="152.0" class="value" text-anchor="end">+59.9%</text>
+<text x="14.0" y="173.0" class="value" text-anchor="start">$175.81 → $281.12</text>
+<rect x="14" y="182" width="332" height="8" rx="4" fill="#D7D7CD"/>
+<rect x="14" y="182" width="207.6" height="8" rx="4" fill="#FEC6E9"/>
+<rect x="14" y="194" width="332.0" height="8" rx="4" fill="#0212EE"/>
+<text x="14.0" y="221.0" class="small" text-anchor="start">Preceding 60 days → latest 30 days</text>
+</svg>

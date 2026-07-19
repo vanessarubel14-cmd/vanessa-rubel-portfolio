@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Vanessa Rubel</title>
+<meta name="description" content="About Vanessa Rubel’s approach to brand and creative strategy for fashion and lifestyle.">
+<meta property="og:title" content="About — Vanessa Rubel">
+<meta property="og:description" content="About Vanessa Rubel’s approach to brand and creative strategy for fashion and lifestyle.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About — Vanessa Rubel">
+<meta name="twitter:description" content="About Vanessa Rubel’s approach to brand and creative strategy for fashion and lifestyle.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#F3F3E9;}
+  *{box-sizing:border-box;}
+  ::selection{background:#0212EE;color:#FEC6E9;}
+  .skip-link{position:fixed;z-index:1000;top:12px;left:20px;transform:translateY(-160%);background:#0212EE;color:#fff;padding:10px 14px;border-radius:6px;font:600 12px/1.2 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;}
+  .skip-link:focus{transform:translateY(0);}
+  .site-logo{min-height:44px;display:inline-flex!important;align-items:center;transition:background-color 180ms ease,color 180ms ease;}
+  .site-nav-links{padding-top:0!important;}
+  .site-nav-link{display:inline-flex;align-items:center;min-height:44px;transition:color 180ms ease;}
+  .site-logo:hover{background:#D20001!important;color:#fff!important;}
+  .site-nav-link:hover{color:#D20001!important;}
+  a:focus-visible{outline:2px solid #D20001;outline-offset:4px;border-radius:4px;}
+  .about-angle-card{
+    transform:rotate(var(--card-rotation));
+    box-shadow:0 8px 20px rgba(26,26,26,.06);
+    transition:transform 240ms ease,box-shadow 240ms ease;
+  }
+  .about-angle-card__summary{
+    display:flex;
+    flex-direction:column;
+    gap:clamp(28px,3.2vw,46px);
+    cursor:default;
+    list-style:none;
+  }
+  .about-angle-card__summary::-webkit-details-marker{display:none;}
+  .about-angle-card__summary::marker{content:"";}
+  .about-angle-card__heading{display:flex;align-items:center;justify-content:space-between;gap:18px;}
+  .about-angle-card__icon{display:none;position:relative;width:18px;height:18px;flex:0 0 18px;}
+  .about-angle-card__icon::before,
+  .about-angle-card__icon::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:14px;
+    height:2px;
+    border-radius:2px;
+    background:currentColor;
+    transform:translate(-50%,-50%);
+    transition:transform 220ms ease;
+  }
+  .about-angle-card__icon::after{transform:translate(-50%,-50%) rotate(90deg);}
+  .about-angle-card[open] .about-angle-card__icon::after{transform:translate(-50%,-50%) rotate(0deg) scaleX(0);}
+  .about-angle-card__summary:focus-visible{outline:2px solid var(--card-focus-color);outline-offset:4px;border-radius:4px;}
+  @media (min-width:841px){
+    .about-angle-card:hover,
+    .about-angle-card:focus-within{
+      transform:translateY(-5px) rotate(var(--card-hover-rotation));
+      box-shadow:0 14px 28px rgba(26,26,26,.14);
+    }
+    .about-angle-card__content{display:block!important;}
+  }
+  @media (max-width:840px){
+    .about-angle-cards{grid-template-columns:1fr!important;gap:clamp(18px,2.8vw,24px)!important;align-items:start!important;}
+    .about-angle-card{min-height:0!important;}
+    .about-angle-card--screen{margin-top:0!important;}
+    .about-angle-card__summary{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(14px,3vw,24px);cursor:pointer;}
+    .about-angle-card__summary{min-height:44px;}
+    .about-angle-card__heading{display:contents;}
+    .about-angle-card__icon{display:block;}
+    .about-angle-card__content{overflow:hidden;}
+    .about-angle-card:not([open]) .about-angle-card__content{display:none;}
+    .about-angle-card[open] .about-angle-card__content{animation:about-card-reveal 240ms ease both;}
+    @keyframes about-card-reveal{
+      from{opacity:0;transform:translateY(-6px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+  }
+  @media (max-width:640px){
+    .about-bio{grid-template-columns:1fr!important;gap:clamp(28px,8vw,40px)!important;}
+    .about-angle-cards{grid-template-columns:1fr!important;gap:clamp(18px,5vw,24px)!important;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .about-angle-card,
+    .about-angle-card__icon::before,
+    .about-angle-card__icon::after,
+    .site-logo,
+    .site-nav-link{transition:none;}
+    .about-angle-card[open] .about-angle-card__content{animation:none;}
+  }
+</style>
+
+</head>
+<body style="margin:0;">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div style="min-height:100vh;background:#F3F3E9;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#1a1a1a;padding:clamp(20px,3vw,40px) clamp(20px,4vw,64px) clamp(70px,8vw,120px);overflow-x:hidden;">
+
+  <nav aria-label="Primary navigation" style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;max-width:1180px;margin:0 auto;">
+    <a href="index.html" class="site-logo" aria-label="Vanessa Rubel, home" style="background:#0212EE;color:#FEC6E9;font-size:13px;font-weight:600;letter-spacing:.04em;padding:7px 15px;border-radius:22px;display:inline-block;transform:rotate(-3deg);text-decoration:none;">VR&nbsp;✦</a>
+    <div class="site-nav-links" style="display:flex;gap:clamp(16px,2.4vw,34px);align-items:center;padding-top:6px;">
+      <a href="index.html" class="site-nav-link" style="color:#0212EE;font-size:12px;letter-spacing:.14em;font-weight:600;text-decoration:none;text-transform:uppercase;">Home</a>
+      <span aria-hidden="true" style="color:#0212EE;opacity:.35;font-size:12px;">·</span>
+      <a href="work.html" class="site-nav-link" style="color:#0212EE;font-size:12px;letter-spacing:.14em;font-weight:600;text-decoration:none;text-transform:uppercase;">Work</a>
+      <span aria-hidden="true" style="color:#0212EE;opacity:.35;font-size:12px;">·</span>
+      <a href="about.html" class="site-nav-link" aria-current="page" style="color:#D20001;font-size:12px;letter-spacing:.14em;font-weight:600;text-decoration:none;text-transform:uppercase;">Info</a>
+    </div>
+  </nav>
+
+  <main id="main-content" style="max-width:1180px;margin:0 auto;">
+
+    <header style="margin-top:clamp(34px,5vw,72px);max-width:1040px;">
+      <span style="color:#D20001;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;">About</span>
+      <h1 style="margin:14px 0 0;color:#0212EE;font-weight:700;font-size:clamp(44px,8vw,116px);line-height:.9;letter-spacing:-.035em;">
+        Creative strategy, from
+        <span style="display:inline-block;background:#D20001;color:#fff;padding:0 .14em .05em;border-radius:9px;transform:rotate(-2deg);">every angle</span>
+      </h1>
+    </header>
+
+    <section class="about-bio" aria-label="Biography" style="margin-top:clamp(44px,6vw,90px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:start;">
+      <div style="color:#1a1a1a;font-size:clamp(15px,1.35vw,18px);line-height:1.75;max-width:560px;">
+        <p style="margin:0;">I’m Vanessa, and I’m focused on brand and creative strategy for fashion and lifestyle. I’m interested in how brands can build deeper connections with their core audience while continuing to grow. I look at what people’s taste and behavior actually signal, then turn those insights into stronger decisions across product, content, collaborations, and experiences.</p>
+        <p style="margin:18px 0 0;">I bring a creative eye, business training, and a high-output work style, so I can move quickly from the central idea to the finished work.</p>
+      </div>
+      <figure style="margin:0;aspect-ratio:4/5;overflow:hidden;border-radius:8px;transform:rotate(2.2deg);">
+        <picture style="display:block;width:100%;height:100%;">
+          <source type="image/avif" srcset="images/about/raw/vanessa-portrait-optimized.avif 2080w" sizes="(max-width:640px) calc(100vw - 40px), min(45vw,525px)">
+          <source type="image/webp" srcset="images/about/raw/vanessa-portrait-optimized.webp 2080w" sizes="(max-width:640px) calc(100vw - 40px), min(45vw,525px)">
+          <img src="images/about/raw/vanessa-portrait.jpeg" srcset="images/about/raw/vanessa-portrait.jpeg 2080w" sizes="(max-width:640px) calc(100vw - 40px), min(45vw,525px)" width="2080" height="3120" decoding="async" alt="Vanessa standing in front of a black-and-white mural" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 65%;background:#0212EE;">
+        </picture>
+      </figure>
+    </section>
+
+    <section class="about-angle-cards" style="margin-top:clamp(56px,7vw,110px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,40px);align-items:stretch;">
+      <details class="about-angle-card about-angle-card--floor" open style="--card-rotation:-1.8deg;--card-hover-rotation:-.4deg;--card-focus-color:#fff;background:#D20001;border-radius:8px;padding:clamp(24px,2.6vw,36px);min-height:clamp(170px,15vw,220px);">
+        <summary class="about-angle-card__summary">
+          <span style="color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;">01</span>
+          <span class="about-angle-card__heading">
+            <h2 style="margin:0;color:#fff;font-weight:700;font-size:clamp(26px,2.6vw,40px);line-height:.96;letter-spacing:-.025em;">The floor</h2>
+            <span class="about-angle-card__icon" aria-hidden="true" style="color:#FEC6E9;"></span>
+          </span>
+        </summary>
+        <div class="about-angle-card__content">
+          <p style="margin:12px 0 0;color:#fff;font-size:14px;line-height:1.6;opacity:.9;">My time at Kith taught me how brands connect with people in real life. I saw firsthand how customers respond to products, collaborations, and service, and how strongly the in-person experience shapes their perception of a brand.</p>
+        </div>
+      </details>
+      <details class="about-angle-card about-angle-card--screen" open style="--card-rotation:1.6deg;--card-hover-rotation:.4deg;--card-focus-color:#fff;background:#0212EE;border-radius:8px;padding:clamp(24px,2.6vw,36px);min-height:clamp(170px,15vw,220px);margin-top:clamp(10px,1.6vw,26px);">
+        <summary class="about-angle-card__summary">
+          <span style="color:#FEC6E9;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;">02</span>
+          <span class="about-angle-card__heading">
+            <h2 style="margin:0;color:#fff;font-weight:700;font-size:clamp(26px,2.6vw,40px);line-height:.96;letter-spacing:-.025em;">The screen</h2>
+            <span class="about-angle-card__icon" aria-hidden="true" style="color:#FEC6E9;"></span>
+          </span>
+        </summary>
+        <div class="about-angle-card__content">
+          <p style="margin:12px 0 0;color:#FEC6E9;font-size:14px;line-height:1.6;">Working with Tiffany Wendel taught me how to turn taste into content that performs. I plan, shoot, and edit across platforms, using creative judgment and performance data to grow an audience and drive measurable results.</p>
+        </div>
+      </details>
+      <details class="about-angle-card about-angle-card--classroom" open style="--card-rotation:-1.4deg;--card-hover-rotation:-.3deg;--card-focus-color:#0212EE;background:#FEC6E9;border-radius:8px;padding:clamp(24px,2.6vw,36px);min-height:clamp(170px,15vw,220px);">
+        <summary class="about-angle-card__summary">
+          <span style="color:#0212EE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;">03</span>
+          <span class="about-angle-card__heading">
+            <h2 style="margin:0;color:#0212EE;font-weight:700;font-size:clamp(26px,2.6vw,40px);line-height:.96;letter-spacing:-.025em;">The classroom</h2>
+            <span class="about-angle-card__icon" aria-hidden="true" style="color:#D20001;"></span>
+          </span>
+        </summary>
+        <div class="about-angle-card__content">
+          <p style="margin:12px 0 0;color:#1a1a1a;font-size:14px;line-height:1.6;">Studying business, fashion, and media, including time in Paris, gave me business instincts with a creative lens.</p>
+        </div>
+      </details>
+    </section>
+
+    <section aria-labelledby="next-heading" style="margin-top:clamp(56px,7vw,110px);">
+      <div style="background:#0212EE;border-radius:8px;padding:clamp(36px,5vw,72px);transform:rotate(-0.5deg);">
+        <h2 id="next-heading" style="margin:0;color:#FEC6E9;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;">What's next</h2>
+        <p style="margin:18px 0 0;color:#fff;font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(26px,3.6vw,52px);line-height:1.28;letter-spacing:-.01em;max-width:1000px;">I’m building toward brand and creative roles where I can help fashion and lifestyle brands make culturally informed decisions, create stronger work, and build deeper relationships with their audiences.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script>
+  (() => {
+    const cards = Array.from(document.querySelectorAll('.about-angle-card'));
+    const compactLayout = window.matchMedia('(max-width: 840px)');
+    let syncing = false;
+
+    const syncCardsToViewport = () => {
+      syncing = true;
+      cards.forEach((card) => {
+        card.open = !compactLayout.matches;
+        card.querySelector('summary').tabIndex = compactLayout.matches ? 0 : -1;
+      });
+      syncing = false;
+    };
+
+    cards.forEach((card) => {
+      const summary = card.querySelector('summary');
+
+      summary.addEventListener('click', (event) => {
+        if (!compactLayout.matches) event.preventDefault();
+      });
+
+      card.addEventListener('toggle', () => {
+        if (syncing) return;
+
+        if (!compactLayout.matches) {
+          if (!card.open) card.open = true;
+          return;
+        }
+
+        if (card.open) {
+          cards.forEach((otherCard) => {
+            if (otherCard !== card) otherCard.open = false;
+          });
+        }
+      });
+    });
+
+    if (compactLayout.addEventListener) {
+      compactLayout.addEventListener('change', syncCardsToViewport);
+    } else {
+      compactLayout.addListener(syncCardsToViewport);
+    }
+
+    syncCardsToViewport();
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 180" role="img" aria-labelledby="chart-title chart-description">
+<title id="chart-title">Pinterest visibility across the content calendar</title>
+<desc id="chart-description">Monthly Pinterest impressions from November 2024 through September 15, 2025. The monthly totals sum to 97,937. September is a partial month with 15 dates, and the final two dates are estimated.</desc>
+<style>
+text{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;fill:#1A1A1A}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.8px;fill:#D20001}
+.title{font-size:34px;font-weight:700;letter-spacing:-.7px;fill:#0212EE}
+.subtitle{font-size:15px;fill:#5D5D56}
+.metric{font-size:31px;font-weight:700;fill:#0212EE}
+.metric-sm{font-size:24px;font-weight:700;fill:#0212EE}
+.label{font-size:17px;font-weight:700}
+.small{font-size:14px;fill:#5D5D56}
+.axis{font-size:14px;fill:#5D5D56}
+.value{font-size:16.5px;font-weight:700}
+</style>
+<defs><pattern id="partial" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#FEC6E9"/><rect width="3" height="8" fill="#D20001"/></pattern></defs>
+<rect width="330" height="180" rx="8" fill="#FAF9F1"/>
+<rect x="12.0" y="49.1" width="24.2" height="74.9" rx="4" fill="#0212EE"/>
+<text x="24.1" y="141.0" class="axis" text-anchor="middle">Nov</text>
+<rect x="40.2" y="25.0" width="24.2" height="99.0" rx="4" fill="#0212EE"/>
+<text x="52.3" y="141.0" class="axis" text-anchor="middle">Dec</text>
+<rect x="68.4" y="16.0" width="24.2" height="108.0" rx="4" fill="#0212EE"/>
+<text x="80.5" y="141.0" class="axis" text-anchor="middle">Jan</text>
+<rect x="96.5" y="19.5" width="24.2" height="104.5" rx="4" fill="#0212EE"/>
+<text x="108.6" y="141.0" class="axis" text-anchor="middle">Feb</text>
+<rect x="124.7" y="35.2" width="24.2" height="88.8" rx="4" fill="#0212EE"/>
+<text x="136.8" y="141.0" class="axis" text-anchor="middle">Mar</text>
+<rect x="152.9" y="43.7" width="24.2" height="80.3" rx="4" fill="#0212EE"/>
+<text x="165.0" y="141.0" class="axis" text-anchor="middle">Apr</text>
+<rect x="181.1" y="35.2" width="24.2" height="88.8" rx="4" fill="#0212EE"/>
+<text x="193.2" y="141.0" class="axis" text-anchor="middle">May</text>
+<rect x="209.3" y="59.9" width="24.2" height="64.1" rx="4" fill="#0212EE"/>
+<text x="221.4" y="141.0" class="axis" text-anchor="middle">Jun</text>
+<rect x="237.5" y="65.5" width="24.2" height="58.5" rx="4" fill="#0212EE"/>
+<text x="249.5" y="141.0" class="axis" text-anchor="middle">Jul</text>
+<rect x="265.6" y="61.2" width="24.2" height="62.8" rx="4" fill="#0212EE"/>
+<text x="277.7" y="141.0" class="axis" text-anchor="middle">Aug</text>
+<rect x="293.8" y="87.8" width="24.2" height="36.2" rx="4" fill="url(#partial)"/>
+<text x="305.9" y="141.0" class="axis" text-anchor="middle">Sep</text>
+<text x="12.0" y="166.0" class="small" text-anchor="start">Monthly impressions</text>
+<text x="318.0" y="166.0" class="small" text-anchor="end">Sep. partial</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 220" role="img" aria-labelledby="chart-title chart-description">
+<title id="chart-title">A focused set of partners generated outsized value</title>
+<desc id="chart-description">The top five ShopMy partners by net order volume generated 35.6 percent of clicks, 50 percent of orders, 74.6 percent of net order volume, and 74.0 percent of commissions. Their click-to-order conversion was 1.42 percent versus 0.78 percent for all other partners, and net order volume per order was 577 dollars and 57 cents versus 196 dollars and 70 cents.</desc>
+<style>
+text{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;fill:#1A1A1A}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.8px;fill:#D20001}
+.title{font-size:34px;font-weight:700;letter-spacing:-.7px;fill:#0212EE}
+.subtitle{font-size:15px;fill:#5D5D56}
+.metric{font-size:31px;font-weight:700;fill:#0212EE}
+.metric-sm{font-size:24px;font-weight:700;fill:#0212EE}
+.label{font-size:17px;font-weight:700}
+.small{font-size:14px;fill:#5D5D56}
+.axis{font-size:14px;fill:#5D5D56}
+.value{font-size:16.5px;font-weight:700}
+</style>
+<rect width="330" height="220" rx="8" fill="#FAF9F1"/>
+<text x="14.0" y="24.0" class="label" text-anchor="start">Click share</text>
+<text x="316.0" y="24.0" class="value" text-anchor="end">35.6% top five</text>
+<rect x="14" y="35" width="302" height="17" rx="6" fill="#FEC6E9"/>
+<rect x="14" y="35" width="107.4" height="17" rx="6" fill="#0212EE"/>
+<text x="14.0" y="73.0" class="label" text-anchor="start">Order share</text>
+<text x="316.0" y="73.0" class="value" text-anchor="end">50.0% top five</text>
+<rect x="14" y="84" width="302" height="17" rx="6" fill="#FEC6E9"/>
+<rect x="14" y="84" width="151.0" height="17" rx="6" fill="#0212EE"/>
+<text x="14.0" y="122.0" class="label" text-anchor="start">Net order volume share</text>
+<text x="316.0" y="122.0" class="value" text-anchor="end">74.6% top five</text>
+<rect x="14" y="133" width="302" height="17" rx="6" fill="#FEC6E9"/>
+<rect x="14" y="133" width="225.3" height="17" rx="6" fill="#0212EE"/>
+<text x="14.0" y="171.0" class="label" text-anchor="start">Commission share</text>
+<text x="316.0" y="171.0" class="value" text-anchor="end">74.0% top five</text>
+<rect x="14" y="182" width="302" height="17" rx="6" fill="#FEC6E9"/>
+<rect x="14" y="182" width="223.6" height="17" rx="6" fill="#0212EE"/>
+</svg>

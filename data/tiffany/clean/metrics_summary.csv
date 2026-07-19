@@ -1,0 +1,5 @@
+platform,metric,exact_value,display_value,reporting_period,source_file,workbook_tab,calculation
+Pinterest,impressions,97937,"97,937",2024-11-01 through 2025-09-15,Pinterest Analytics 11:24-9:25.csv,N/A (CSV),Sum 319 daily impression values
+LTK,latest_30_day_share_of_90_day_commission,44.42913789225088674105475432,44.4%,Latest 30 days within supplied 90-day view,LTK_Audit_Tiffany.xlsx,Summary; brands_1m; brands_90d,8433.73 / 18982.43 x 100
+LTK,latest_30_day_average_commission_per_day,281.1243333333333333333333333,$281.12,Latest 30 days,LTK_Audit_Tiffany.xlsx,Summary; brands_1m,8433.73 / 30
+ShopMy,top_five_share_of_net_order_volume,74.59576629828783488821632606,74.6%,2025-05-02 through 2025-07-30,TIFF DATA Shop My.xlsx,shop my 90days- performancebysi; shop my 90days- allorders,17327.03 / 23227.90 x 100
