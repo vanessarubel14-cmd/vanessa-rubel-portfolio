@@ -33,16 +33,55 @@
   a:focus-visible{outline:2px solid #D20001;outline-offset:4px;border-radius:4px;}
 </style>
 <style>
-  a.viewproj span{background-image:linear-gradient(#D20001,#D20001);background-size:0% 1.5px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s ease;padding-bottom:2px;}
-  a.viewproj:hover span,a.viewproj:focus-visible span{background-size:100% 1.5px;}
-  .work-project-media img{display:block;width:100%;height:100%;object-fit:cover;border-radius:8px;}
+  .work-heading{margin-top:clamp(34px,5vw,72px);display:flex;align-items:baseline;gap:clamp(16px,2vw,26px);flex-wrap:wrap;}
+  .work-heading h1{margin:0;color:#0212EE;font-weight:700;font-size:clamp(52px,7.8vw,112px);line-height:.86;letter-spacing:-.035em;}
+  .work-count{color:#D20001;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;}
+  .work-projects{margin-top:clamp(54px,6vw,84px);}
+  .work-project-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:clamp(36px,5vw,72px);align-items:center;padding:clamp(48px,5vw,68px) 0;text-decoration:none;color:inherit;}
+  .work-project-row:first-child{padding-top:0;}
+  .work-project-row + .work-project-row{border-top:1px solid rgba(26,26,26,.18);}
+  .work-project-row--kith{grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);}
+  .work-project-copy{max-width:430px;}
+  .work-project-category{color:#D20001;font-size:11px;font-weight:700;letter-spacing:.12em;line-height:1.45;text-transform:uppercase;}
+  .work-project-title{margin:14px 0 0;color:#0212EE;font-weight:700;font-size:clamp(34px,3.5vw,50px);line-height:.94;letter-spacing:-.035em;}
+  .work-project-description{margin:clamp(20px,2vw,28px) 0 0;max-width:390px;color:#1a1a1a;font-size:clamp(14px,1.15vw,16px);line-height:1.55;}
+  .work-project-cta{margin-top:clamp(22px,2.2vw,30px);color:#D20001;font-size:14px;font-weight:500;letter-spacing:-.005em;}
+  .work-project-cta span{background-image:linear-gradient(#D20001,#D20001);background-size:0% 1.5px;background-repeat:no-repeat;background-position:0 100%;transition:background-size 220ms ease;padding-bottom:5px;}
+  .work-project-row:hover .work-project-cta span,.work-project-row:focus-visible .work-project-cta span{background-size:100% 1.5px;}
+  .work-project-media{margin:0;min-width:0;transform:rotate(-1.1deg);}
+  .work-project-media-frame{position:relative;width:100%;overflow:hidden;border-radius:8px;background:#ddd;transition:transform 260ms ease;}
+  .work-project-row:hover .work-project-media-frame,.work-project-row:focus-visible .work-project-media-frame{transform:scale(1.008);}
+  .work-project-media img{display:block;width:100%;height:100%;object-fit:cover;}
+  .work-project-media--concrete .work-project-media-frame{aspect-ratio:16/10;background:#1c0712;}
+  .work-project-media--concrete img{object-position:center 5%;}
+  .work-project-media--tiffany{transform:rotate(1deg);}
+  .work-project-media--tiffany .work-project-media-frame{aspect-ratio:6/5;background:#0212EE;}
+  .work-project-media--tiffany img{object-position:center 40%;}
+  .work-project-media--kith{order:1;transform:rotate(1deg);}
+  .work-project-media--kith .work-project-media-frame{aspect-ratio:16/9;background:#FEC6E9;}
+  .work-project-media--kith img{object-position:center 48%;}
+  .work-project-row--kith .work-project-copy{order:0;}
+  @media (max-width:900px){
+    .work-project-row{grid-template-columns:minmax(0,1.08fr) minmax(240px,.92fr);gap:clamp(28px,4vw,42px);}
+    .work-project-row--kith{grid-template-columns:minmax(240px,.86fr) minmax(0,1.14fr);}
+    .work-project-title{font-size:clamp(30px,4.2vw,38px);}
+  }
   @media (max-width:640px){
-    a.work-project-row{grid-template-columns:1fr!important;gap:clamp(24px,6vw,32px)!important;}
-    a.work-project-row .work-project-media{order:0!important;}
-    a.work-project-row .work-project-copy{order:1!important;}
+    .work-heading{gap:12px 16px;}
+    .work-heading h1{font-size:clamp(46px,14vw,62px);line-height:.9;}
+    .work-projects{margin-top:44px;}
+    .work-project-row,.work-project-row--kith{grid-template-columns:1fr;gap:clamp(24px,6vw,30px);padding:44px 0;}
+    .work-project-row .work-project-media{order:0;transform:rotate(-.65deg);}
+    .work-project-row .work-project-copy{order:1;max-width:none;}
+    .work-project-media--concrete .work-project-media-frame{aspect-ratio:4/3;}
+    .work-project-media--tiffany .work-project-media-frame{aspect-ratio:1/1;}
+    .work-project-media--kith .work-project-media-frame{aspect-ratio:16/10;}
+    .work-project-title{font-size:clamp(32px,10vw,42px);}
+    .work-project-description{max-width:34em;font-size:15px;}
   }
   @media (prefers-reduced-motion:reduce){
-    .site-logo,.site-nav-link,a.viewproj span{transition:none;}
+    .site-logo,.site-nav-link,.work-project-cta span,.work-project-media-frame{transition:none;}
+    .work-project-row:hover .work-project-media-frame,.work-project-row:focus-visible .work-project-media-frame{transform:none;}
   }
 </style>
 </head>
@@ -63,47 +102,53 @@
 
   <main id="main-content" style="max-width:1180px;margin:0 auto;">
 
-    <header style="margin-top:clamp(34px,5vw,72px);display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;">
-      <h1 style="margin:0;color:#0212EE;font-weight:700;font-size:clamp(48px,9vw,132px);line-height:.86;letter-spacing:-.035em;">Selected work</h1>
+    <header class="work-heading">
+      <h1>Selected work</h1>
+      <div class="work-count">Three projects</div>
     </header>
 
-    <section aria-label="Selected projects" style="margin-top:clamp(48px,7vw,104px);display:flex;flex-direction:column;gap:clamp(64px,9vw,150px);">
+    <section class="work-projects" aria-label="Selected projects">
 
-      <a href="project-tiffany-wendel.html" class="viewproj work-project-row" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(28px,4vw,72px);align-items:center;">
-        <figure class="work-project-media" style="margin:0;order:0;transform:rotate(-1.6deg);">
-          <picture style="display:block;width:100%;height:100%;">
-            <source type="image/avif" srcset="images/tiffany-wendel/raw/tiffany-wendel-hero-optimized.avif 2668w" sizes="(max-width:640px) calc(100vw - 40px), min(53vw,630px)">
-            <source type="image/webp" srcset="images/tiffany-wendel/raw/tiffany-wendel-hero-optimized.webp 2668w" sizes="(max-width:640px) calc(100vw - 40px), min(53vw,630px)">
-            <img src="images/tiffany-wendel/raw/tiffany-wendel-hero.png" srcset="images/tiffany-wendel/raw/tiffany-wendel-hero.png 2668w" sizes="(max-width:640px) calc(100vw - 40px), min(53vw,630px)" width="2668" height="1388" fetchpriority="high" decoding="async" alt="Fashion styling mood board with clothing racks, outfits, and accessories" style="aspect-ratio:3/4;object-position:top center;background:#0212EE;">
-          </picture>
+      <a href="project-concrete-runways.html" class="work-project-row">
+        <figure class="work-project-media work-project-media--concrete">
+          <div class="work-project-media-frame">
+            <img src="images/concrete-runways/raw/concrete-runways-cover.jpg" width="2516" height="3256" fetchpriority="high" decoding="async" alt="Concrete Runways magazine cover with a city skyline and bold yellow title">
+          </div>
         </figure>
-        <div class="work-project-copy" style="order:1;">
-          <div style="color:#5D5D56;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;">Stylist work · Digital strategy</div>
-          <h2 style="margin:16px 0 0;color:#0212EE;font-weight:700;font-size:clamp(30px,4vw,56px);line-height:.96;letter-spacing:-.03em;">Tiffany Wendel: Digital Growth Strategy</h2>
-          <div class="viewproj" style="margin-top:clamp(20px,2.4vw,32px);color:#D20001;font-size:15px;font-weight:600;letter-spacing:-.005em;"><span>View project&nbsp;↗</span></div>
+        <div class="work-project-copy">
+          <div class="work-project-category">Magazine design · Print · Concept</div>
+          <h2 class="work-project-title">Concrete Runways</h2>
+          <p class="work-project-description">A print magazine exploring the intersections of fashion, sport culture, and streetwear, where editorial sophistication meets raw street energy.</p>
+          <div class="work-project-cta"><span>View project&nbsp;↗</span></div>
         </div>
       </a>
 
-      <a href="project-kith.html" class="viewproj work-project-row" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,4vw,72px);align-items:center;">
-        <div class="work-project-copy" style="order:0;">
-          <div style="color:#5D5D56;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;">Client experience · Fashion retail</div>
-          <h2 style="margin:16px 0 0;color:#0212EE;font-weight:700;font-size:clamp(30px,4vw,56px);line-height:.96;letter-spacing:-.03em;">Kith: Client Experience &amp; Brand Insight</h2>
-          <div class="viewproj" style="margin-top:clamp(20px,2.4vw,32px);color:#D20001;font-size:15px;font-weight:600;letter-spacing:-.005em;"><span>View project&nbsp;↗</span></div>
-        </div>
-        <figure class="work-project-media" style="margin:0;order:1;transform:rotate(2deg);">
-          <img src="images/kith/raw/kith-hero.jpeg" srcset="images/kith/raw/kith-hero.jpeg 547w" sizes="(max-width:640px) calc(100vw - 40px), min(53vw,630px)" width="547" height="365" loading="lazy" decoding="async" alt="Kith Miami Beach interior with a pale blue arched hallway" style="aspect-ratio:3/4;object-position:center;background:#FEC6E9;">
+      <a href="project-tiffany-wendel.html" class="work-project-row">
+        <figure class="work-project-media work-project-media--tiffany">
+          <div class="work-project-media-frame">
+            <img src="images/tiffany-wendel/raw/tiffany-styling-collage-optimized.webp" width="1206" height="2622" loading="lazy" decoding="async" alt="Fashion styling collage with outfits, clothing racks, shoes, and accessories">
+          </div>
         </figure>
+        <div class="work-project-copy">
+          <div class="work-project-category">Stylist work · Digital strategy</div>
+          <h2 class="work-project-title">Tiffany Wendel: Digital Growth Strategy</h2>
+          <p class="work-project-description">Partnered with stylist Tiffany Wendel to drive growth across Pinterest, LTK, and ShopMy by blending fashion expertise with strategic digital marketing.</p>
+          <div class="work-project-cta"><span>View project&nbsp;↗</span></div>
+        </div>
       </a>
 
-      <a href="project-concrete-runways.html" class="viewproj work-project-row" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(28px,4vw,72px);align-items:center;">
-        <figure class="work-project-media" style="margin:0;order:0;transform:rotate(-2deg);">
-          <img src="images/concrete-runways/raw/concrete-runways-cover.jpg" srcset="images/concrete-runways/raw/concrete-runways-cover.jpg 2516w" sizes="(max-width:640px) calc(100vw - 40px), min(53vw,630px)" width="2516" height="3256" loading="lazy" decoding="async" alt="Concrete Runways magazine cover with a city skyline and bold yellow title" style="aspect-ratio:16/10;object-position:top center;background:#D20001;">
-        </figure>
-        <div class="work-project-copy" style="order:1;">
-          <div style="color:#5D5D56;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;">Magazine design · Print · Concept</div>
-          <h2 style="margin:16px 0 0;color:#0212EE;font-weight:700;font-size:clamp(30px,4vw,56px);line-height:.96;letter-spacing:-.03em;">Concrete Runways</h2>
-          <div class="viewproj" style="margin-top:clamp(20px,2.4vw,32px);color:#D20001;font-size:15px;font-weight:600;letter-spacing:-.005em;"><span>View project&nbsp;↗</span></div>
+      <a href="project-kith.html" class="work-project-row work-project-row--kith">
+        <div class="work-project-copy">
+          <div class="work-project-category">Client experience · Fashion retail</div>
+          <h2 class="work-project-title">Kith: Client Experience &amp; Brand Insight</h2>
+          <p class="work-project-description">Customer experience associate at Kith Miami Beach. Observing how a global brand builds culture, connection, and consistency across every touchpoint.</p>
+          <div class="work-project-cta"><span>View project&nbsp;↗</span></div>
         </div>
+        <figure class="work-project-media work-project-media--kith">
+          <div class="work-project-media-frame">
+            <img src="images/kith/HERO.webp" width="2048" height="1365" loading="lazy" decoding="async" alt="Kith Miami Beach interior with the KITH logo, central counter, and surrounding architecture">
+          </div>
+        </figure>
       </a>
 
     </section>
