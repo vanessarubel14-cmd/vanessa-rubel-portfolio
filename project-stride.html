@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STRIDE Workout App Case Study — Vanessa Rubel</title>
+<meta name="description" content="How Vanessa Rubel designed and directed STRIDE, a mobile-first workout app built around flexible planning, logging, review, and reuse.">
+<meta property="og:title" content="STRIDE Workout App Case Study — Vanessa Rubel">
+<meta property="og:description" content="How Vanessa Rubel designed and directed STRIDE, a mobile-first workout app built around flexible planning, logging, review, and reuse.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vanessarubel.com/project-stride.html">
+<meta property="og:image" content="https://vanessarubel.com/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="STRIDE Workout App Case Study — Vanessa Rubel">
+<meta name="twitter:description" content="How Vanessa Rubel designed and directed STRIDE, a mobile-first workout app built around flexible planning, logging, review, and reuse.">
+<meta name="twitter:image" content="https://vanessarubel.com/social-preview.png">
+<link rel="canonical" href="https://vanessarubel.com/project-stride.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#F3F3E9;}
+  *{box-sizing:border-box;}
+  ::selection{background:#0212EE;color:#FEC6E9;}
+  .skip-link{position:fixed;z-index:1000;top:12px;left:20px;transform:translateY(-160%);background:#0212EE;color:#fff;padding:10px 14px;border-radius:6px;font:600 12px/1.2 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;}
+  .skip-link:focus{transform:translateY(0);}
+  .page-shell{min-height:100vh;background:#F3F3E9;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#1a1a1a;padding:clamp(20px,3vw,40px) clamp(20px,4vw,64px) clamp(64px,8vw,110px);overflow-x:hidden;}
+  .site-nav{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;max-width:1180px;margin:0 auto;}
+  .site-logo{background:#0212EE;color:#FEC6E9;font-size:13px;font-weight:600;letter-spacing:.04em;padding:7px 15px;border-radius:22px;display:inline-flex;align-items:center;min-height:44px;transform:rotate(-3deg);text-decoration:none;transition:background-color 180ms ease,color 180ms ease;}
+  .project-nav-links{display:flex;gap:clamp(16px,2.4vw,34px);align-items:center;}
+  .site-nav-link{color:#0212EE;font-size:12px;letter-spacing:.14em;font-weight:600;text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;min-height:44px;transition:color 180ms ease;}
+  .site-logo:hover{background:#D20001;color:#fff;}
+  .site-nav-link:hover{color:#D20001;}
+  a:focus-visible,[tabindex]:focus-visible{outline:2px solid #D20001;outline-offset:4px;border-radius:4px;}
+  .nav-dot{color:#0212EE;opacity:.35;font-size:12px;}
+  .case-study{max-width:1180px;margin:0 auto;}
+  .eyebrow{color:#D20001;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  .hero{margin-top:clamp(42px,5.5vw,76px);}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,.6fr);gap:clamp(38px,6vw,88px);align-items:end;}
+  .hero h1{margin:16px 0 0;color:#0212EE;font-weight:700;font-size:clamp(46px,5.55vw,80px);line-height:.9;letter-spacing:-.045em;max-width:860px;}
+  .hero-title-prefix,.hero-highlight-line{display:block;}
+  .hero-highlight-line{margin-top:.08em;}
+  .hero-accent{background:#D20001;color:#fff;padding:0 .12em .05em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+  .hero-intro{font-size:clamp(17px,1.4vw,20px);line-height:1.62;margin:0;max-width:470px;}
+  .hero-lifecycle{display:inline-flex;max-width:100%;margin-top:20px;background:#FEC6E9;color:#0212EE;border-radius:7px;padding:10px 14px;font-size:12px;font-weight:700;line-height:1.4;}
+  .hero-visual{position:relative;isolation:isolate;aspect-ratio:16/7;margin:clamp(34px,4.2vw,54px) 0 0;overflow:hidden;background:#FAF9F1;border:1px solid rgba(2,18,238,.2);border-radius:12px;transform:rotate(-.25deg);}
+  .hero-screen{position:absolute;top:7%;display:block;width:auto;height:86%;border:1px solid rgba(2,18,238,.16);border-radius:12px;box-shadow:0 14px 32px rgba(26,26,26,.12);}
+  .hero-screen-home{left:26%;transform:rotate(-4deg);}
+  .hero-screen-active{z-index:2;left:50%;height:90%;top:5%;transform:translateX(-50%) rotate(1deg);}
+  .hero-screen-review{right:26%;transform:rotate(4deg);}
+  .project-metadata{margin:clamp(28px,3.4vw,42px) 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:clamp(22px,3vw,40px);}
+  .project-metadata>div{border-top:1px solid rgba(2,18,238,.24);padding:10px 0 14px;min-width:0;}
+  .project-metadata dt{color:#D20001;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  .project-metadata dd{margin:6px 0 0;color:#1a1a1a;font-size:12px;line-height:1.48;overflow-wrap:anywhere;}
+  .opportunity{margin-top:clamp(66px,7vw,96px);display:grid;grid-template-columns:minmax(360px,.92fr) minmax(0,1.08fr);gap:clamp(38px,5vw,72px);align-items:start;max-width:1100px;}
+  .opportunity h2{color:#0212EE;font-size:clamp(36px,4.4vw,58px);line-height:.97;letter-spacing:-.035em;margin:14px 0 0;}
+  .opportunity-copy{font-size:16px;line-height:1.75;margin-top:7px;max-width:540px;}
+  .opportunity-copy p{margin:0;}
+  .opportunity-copy p+p{margin-top:1.15em;}
+  .opportunity-continuity{grid-column:2;margin:0;background:#D20001;color:#fff;border-radius:8px;padding:14px 18px;font-size:clamp(14px,1.4vw,17px);font-weight:700;line-height:1.45;}
+  .active-workout{margin-top:clamp(82px,9vw,128px);max-width:1100px;}
+  .active-editorial{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.6fr) minmax(380px,1.15fr);grid-template-rows:auto 1fr;column-gap:clamp(24px,2.8vw,40px);align-items:start;}
+  .active-workout-title{grid-column:1;grid-row:1;}
+  .active-workout h2{margin:14px 0 0;color:#0212EE;font-size:clamp(36px,4.4vw,58px);line-height:.97;letter-spacing:-.035em;}
+  .active-workout-copy{grid-column:2;grid-row:1 / span 2;margin-top:52px;font-size:14px;line-height:1.66;}
+  .active-workout-copy p{margin:0;}
+  .active-workout-copy p+p{margin-top:1.05em;}
+  .active-opening{color:#0212EE;font-size:16px;font-weight:700;line-height:1.5;}
+  .active-pull-quote{grid-column:1;grid-row:2;align-self:start;margin:clamp(28px,3vw,38px) 0 0;max-width:350px;border-left:3px solid #D20001;padding:2px 0 3px 16px;color:#0212EE;font-family:Georgia,'Times New Roman',serif;font-size:clamp(22px,2.15vw,28px);font-style:italic;line-height:1.2;letter-spacing:-.02em;}
+  .comparison-figure{grid-column:3;grid-row:1 / span 2;margin:0;min-width:0;}
+  .comparison-grid{display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);gap:10px;align-items:start;}
+  .comparison-item{min-width:0;}
+  .evidence-label{display:inline-block;margin:0 0 8px;color:#D20001;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  .comparison-media{display:block;margin:0;background:transparent;border:0;padding:0;}
+  .comparison-media img{display:block;width:100%;height:auto;border:1px solid rgba(2,18,238,.18);border-radius:9px;box-shadow:0 12px 26px rgba(26,26,26,.07);}
+  .comparison-connector{position:relative;align-self:center;height:1px;margin-top:22px;background:rgba(2,18,238,.46);}
+  .comparison-connector::after{position:absolute;right:0;top:50%;width:6px;height:6px;border-top:1px solid #0212EE;border-right:1px solid #0212EE;content:"";transform:translateY(-50%) rotate(45deg);}
+  .evidence-caption{margin:14px 0 0;color:#5D5D56;font-size:12px;line-height:1.55;}
+  .replacement-block{margin-top:clamp(52px,6vw,76px);border-top:1px solid rgba(2,18,238,.52);padding-top:clamp(24px,3.4vw,38px);}
+  .replacement-story{display:grid;grid-template-columns:minmax(260px,300px) minmax(0,1fr);gap:clamp(30px,2.5vw,36px);align-items:start;}
+  .replacement-intro h3{margin:0;color:#D20001;font-size:10px;font-weight:700;letter-spacing:.14em;line-height:1.3;text-transform:uppercase;}
+  .replacement-intro h4{margin:14px 0 0;color:#0212EE;font-size:clamp(28px,2.7vw,34px);line-height:1.02;letter-spacing:-.03em;}
+  .replacement-sequence{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.9fr) minmax(0,.92fr) minmax(0,1.14fr);gap:clamp(12px,1.4vw,18px);align-items:start;}
+  .replacement-sequence:focus-visible{outline-offset:-3px;}
+  .replacement-step{position:relative;min-width:0;}
+  .replacement-step-heading{display:flex;align-items:baseline;gap:7px;min-height:28px;margin:0 0 10px;}
+  .replacement-step-number{color:#D20001;font-size:9px;font-weight:700;letter-spacing:.14em;}
+  .replacement-step-label{color:#1a1a1a;font-size:11px;font-weight:700;line-height:1.35;}
+  .replacement-media{position:relative;overflow:hidden;margin:0 auto;background:#FAF9F1;border:1px solid rgba(2,18,238,.18);border-radius:10px;padding:4px;box-shadow:0 12px 28px rgba(26,26,26,.06);}
+  .replacement-media img{display:block;width:100%;height:auto;border-radius:7px;}
+  .replacement-step--active .replacement-media,.replacement-step--continue .replacement-media{max-width:220px;margin-top:22px;}
+  .replacement-step--choose .replacement-media{max-width:190px;margin-top:32px;}
+  .replacement-step--confirm .replacement-media{max-width:190px;aspect-ratio:.92;margin-top:76px;padding:0;transform:rotate(-.65deg);}
+  .replacement-step--confirm .replacement-media img{position:absolute;inset:auto 0 0;width:100%;height:auto;border-radius:0;}
+  .replacement-step--continue .replacement-media{transform:rotate(.45deg);}
+  .replacement-caption{margin:24px 0 0;max-width:220px;color:#5D5D56;font-size:12px;line-height:1.6;}
+  .automation-recovery{margin-top:clamp(92px,10vw,144px);border-top:1px solid rgba(2,18,238,.52);padding-top:clamp(24px,3.4vw,38px);}
+  .automation-editorial{display:grid;grid-template-columns:minmax(250px,.55fr) minmax(0,1.55fr);gap:clamp(36px,4vw,58px);align-items:start;}
+  .automation-intro h2{margin:14px 0 0;color:#0212EE;font-size:clamp(38px,4.7vw,62px);line-height:.94;letter-spacing:-.04em;}
+  .automation-copy{margin-top:24px;max-width:330px;font-size:15px;line-height:1.72;}
+  .automation-copy p{margin:0;}
+  .automation-copy p+p{margin-top:1.05em;}
+  .automation-principle{margin-top:clamp(28px,3.6vw,46px);max-width:270px;background:#FEC6E9;border-radius:9px;padding:18px 20px;color:#0212EE;}
+  .automation-principle-label{display:block;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  .automation-principle p{margin:10px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(18px,1.7vw,22px);font-style:italic;line-height:1.32;letter-spacing:-.015em;}
+  .automation-workflow{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.08fr) minmax(0,1.08fr) minmax(0,.88fr);gap:clamp(14px,1.6vw,22px);align-items:start;}
+  .automation-step{position:relative;min-width:0;}
+  .automation-step--paste{margin-top:48px;}
+  .automation-step--resolve{margin-top:24px;}
+  .automation-step--edit{margin-top:64px;}
+  .automation-step:not(:last-child)::after{position:absolute;z-index:2;top:46px;right:calc(clamp(14px,1.6vw,22px) * -.72);color:#0212EE;content:"\2192";font-size:20px;line-height:1;}
+  .automation-step-heading{display:flex;align-items:center;gap:9px;min-height:34px;margin:0 0 10px;}
+  .automation-step-number{display:inline-grid;place-items:center;flex:0 0 auto;width:25px;height:25px;background:#0212EE;color:#fff;border-radius:50%;font-size:10px;font-weight:700;}
+  .automation-step-label{color:#1a1a1a;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+  .automation-media{overflow:hidden;margin:0;background:#FAF9F1;border:1px solid rgba(2,18,238,.22);border-radius:11px;box-shadow:0 13px 28px rgba(26,26,26,.07);}
+  .automation-media img{display:block;width:100%;height:100%;object-fit:cover;}
+  .automation-step--paste .automation-media{aspect-ratio:.61;}
+  .automation-step--paste .automation-media img{object-position:50% 10%;}
+  .automation-step--review .automation-media{aspect-ratio:.67;}
+  .automation-step--review .automation-media img{object-position:50% 37%;}
+  .automation-step--resolve .automation-media{aspect-ratio:.67;}
+  .automation-step--resolve .automation-media img{object-position:50% 43%;}
+  .automation-step--edit .automation-media{aspect-ratio:.59;}
+  .automation-step--edit .automation-media img{object-position:50% 13%;}
+  .recovery-panel{margin-top:clamp(58px,6vw,82px);display:grid;grid-template-columns:minmax(230px,.5fr) minmax(0,1.5fr);gap:clamp(30px,4vw,54px);align-items:start;background:rgba(254,198,233,.18);border:1px solid rgba(2,18,238,.62);border-radius:12px;padding:clamp(24px,3.4vw,40px);}
+  .recovery-copy h3{margin:12px 0 0;color:#0212EE;font-size:clamp(28px,3vw,40px);line-height:.98;letter-spacing:-.035em;}
+  .recovery-copy p{margin:20px 0 0;max-width:310px;font-size:14px;line-height:1.7;}
+  .recovery-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,2.5vw,34px);align-items:start;}
+  .recovery-step{position:relative;min-width:0;}
+  .recovery-step:not(:last-child)::after{position:absolute;z-index:2;top:50%;right:calc(clamp(22px,2.5vw,34px) * -.72);color:#0212EE;content:"\2192";font-size:18px;line-height:1;transform:translateY(-50%);}
+  .recovery-step-heading{display:flex;align-items:center;gap:8px;margin:0 0 10px;}
+  .recovery-step-number{display:inline-grid;place-items:center;flex:0 0 auto;width:23px;height:23px;background:#0212EE;color:#fff;border-radius:50%;font-size:9px;font-weight:700;}
+  .recovery-step-label{font-size:10px;font-weight:700;letter-spacing:.08em;line-height:1.25;text-transform:uppercase;}
+  .recovery-media{overflow:hidden;margin:0;background:#FAF9F1;border:1px solid rgba(2,18,238,.2);border-radius:9px;aspect-ratio:1.12;}
+  .recovery-media img{display:block;width:100%;height:100%;object-fit:cover;}
+  .recovery-step--return .recovery-media img{object-position:50% 24%;}
+  .recovery-step--continue .recovery-media img{object-position:50% 47%;}
+  .recovery-step--resume .recovery-media img{object-position:50% 24%;}
+  .role-process{margin-top:clamp(96px,10vw,150px);border-top:1px solid rgba(2,18,238,.52);padding-top:clamp(24px,3.4vw,38px);}
+  .role-process-grid{display:grid;grid-template-columns:minmax(455px,.92fr) minmax(0,1.08fr);gap:clamp(42px,4.5vw,64px);align-items:start;}
+  .role-process-copy h2{margin:14px 0 0;color:#0212EE;font-size:clamp(42px,4.8vw,64px);line-height:.94;letter-spacing:-.045em;}
+  .role-title-line{display:block;}
+  .role-process-intro{margin:26px 0 0;max-width:500px;color:#1a1a1a;font-size:clamp(17px,1.45vw,20px);font-weight:600;line-height:1.55;}
+  .role-process-body{margin-top:30px;max-width:510px;border-top:2px solid #0212EE;padding-top:22px;font-size:15px;line-height:1.72;}
+  .role-process-body p{margin:0;}
+  .role-process-body p+p{margin-top:1.05em;}
+  .role-process-callout{margin:clamp(30px,4vw,48px) 0 0 clamp(18px,3vw,40px);max-width:440px;background:#FEC6E9;color:#0212EE;border-radius:10px;padding:clamp(22px,2.5vw,30px);}
+  .role-process-callout p{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(22px,2vw,28px);font-style:italic;line-height:1.3;letter-spacing:-.02em;}
+  .contribution-diagram{min-width:0;}
+  .contribution-block{position:relative;border-radius:12px;padding:clamp(24px,2.8vw,34px);}
+  .contribution-block h3,.iteration-block h3{margin:0;font-size:clamp(24px,2.25vw,30px);line-height:1;letter-spacing:-.025em;}
+  .contribution-block-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,.38fr);gap:clamp(24px,3vw,38px);align-items:center;}
+  .contribution-block ul{margin:20px 0 0;padding:0;list-style:none;}
+  .contribution-block li{position:relative;padding-left:18px;font-size:14px;line-height:1.48;}
+  .contribution-block li+li{margin-top:8px;}
+  .contribution-block li::before{position:absolute;top:.58em;left:0;width:6px;height:6px;background:currentColor;border-radius:50%;content:"";}
+  .contribution-statement{margin:0;border-left:1px solid currentColor;padding:4px 0 4px clamp(20px,2.5vw,32px);font-size:14px;font-weight:700;line-height:1.52;}
+  .vanessa-block{background:#0212EE;color:#fff;box-shadow:0 16px 36px rgba(2,18,238,.13);}
+  .vanessa-block h3{font-size:clamp(30px,2.8vw,38px);}
+  .codex-block{width:94%;margin-left:6%;background:#FEC6E9;color:#1a1a1a;padding-top:clamp(20px,2.3vw,28px);padding-bottom:clamp(20px,2.3vw,28px);}
+  .codex-block .contribution-block-grid{grid-template-columns:minmax(0,1fr) minmax(135px,.32fr);}
+  .role-flow-arrow{position:relative;z-index:2;display:grid;place-items:center;width:42px;height:42px;margin:-5px auto;background:#F3F3E9;border:1px solid rgba(2,18,238,.35);border-radius:50%;color:#0212EE;font-size:24px;line-height:1;box-shadow:0 5px 12px rgba(26,26,26,.08);}
+  .iteration-block{width:88%;margin-left:12%;border:2px solid #D20001;border-radius:12px;padding:clamp(22px,2.6vw,30px);color:#1a1a1a;}
+  .iteration-block-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,.4fr);gap:clamp(24px,3vw,38px);align-items:center;}
+  .iteration-block h3{color:#D20001;}
+  .iteration-copy{margin:14px 0 0;font-size:14px;font-weight:600;line-height:1.52;}
+  .iteration-statement{margin:0;border-left:1px solid rgba(210,0,1,.58);padding:4px 0 4px clamp(20px,2.5vw,32px);color:#D20001;font-size:14px;font-weight:700;line-height:1.48;}
+  .process-summary{margin-top:clamp(54px,6vw,80px);border-top:2px solid #0212EE;padding-top:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
+  .process-summary-item{min-width:0;padding:2px clamp(18px,2vw,28px);display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;}
+  .process-summary-item:first-child{padding-left:0;}
+  .process-summary-item:last-child{padding-right:0;}
+  .process-summary-item+.process-summary-item{border-left:1px solid rgba(2,18,238,.42);}
+  .process-summary-icon{display:grid;place-items:center;width:25px;height:25px;border:1px solid #0212EE;border-radius:50%;color:#0212EE;font-size:14px;font-weight:700;line-height:1;}
+  .process-summary-term{display:block;color:#0212EE;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+  .process-summary-description{display:block;margin-top:7px;color:#3E3E39;font-size:12px;line-height:1.5;}
+  .reflection{margin-top:clamp(112px,12vw,172px);border-top:1px solid rgba(2,18,238,.52);padding-top:clamp(28px,3.8vw,44px);}
+  .reflection-opening{display:grid;grid-template-columns:minmax(240px,.52fr) minmax(0,1.48fr);gap:clamp(48px,7vw,92px);align-items:start;}
+  .reflection h2{margin:0;color:#0212EE;font-size:clamp(42px,4.8vw,64px);line-height:.95;letter-spacing:-.04em;}
+  .reflection-body{max-width:720px;font-size:17px;line-height:1.78;}
+  .reflection-body p{margin:0;}
+  .reflection-body p+p{margin-top:1.35em;}
+  .reflection-principles{list-style:none;margin:clamp(82px,9vw,122px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,52px);}
+  .reflection-principle{border-top:1px solid rgba(2,18,238,.42);padding-top:20px;}
+  .reflection-principle-number{display:block;color:#D20001;font-size:10px;font-weight:700;letter-spacing:.14em;}
+  .reflection-principle h3{margin:18px 0 0;color:#0212EE;font-size:clamp(22px,2vw,27px);line-height:1.05;letter-spacing:-.025em;}
+  .reflection-principle p{margin:14px 0 0;color:#3E3E39;font-size:14px;line-height:1.66;}
+  .reflection-closing{margin:clamp(92px,10vw,136px) 0 0 clamp(76px,9vw,138px);max-width:930px;border-top:1px solid rgba(2,18,238,.52);padding-top:clamp(38px,5vw,62px);}
+  .reflection-closing p{margin:0;color:#0212EE;font-family:'Newsreader',Georgia,serif;font-size:clamp(30px,3.45vw,46px);font-style:italic;font-weight:400;line-height:1.28;letter-spacing:-.018em;}
+  .stride-next-projects{margin-top:clamp(48px,6vw,82px);max-width:1040px;}
+  .stride-next-projects h2{margin:0;color:#D20001;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
+  .stride-next-projects-grid{margin-top:clamp(24px,3vw,36px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3.5vw,48px);}
+  .stride-next-project{border-top:1px solid rgba(2,18,238,.28);padding-top:18px;}
+  .stride-next-project-category{display:block;color:#6b6b66;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;}
+  .stride-next-project h3{margin:10px 0 0;color:#0212EE;font-size:clamp(24px,2.8vw,36px);font-weight:700;line-height:1;letter-spacing:-.025em;}
+  .stride-next-project-link{display:inline-flex;align-items:center;min-height:44px;margin-top:18px;color:#0212EE;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;}
+  .stride-next-project-link:hover{color:#D20001;}
+  .stride-next-project-link:focus-visible{border-radius:2px;}
+  @media (max-width:820px){
+    .hero-grid,.opportunity,.active-editorial,.automation-editorial,.role-process-grid{grid-template-columns:1fr;}
+    .hero-copy{max-width:640px;}
+    .project-metadata{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .opportunity-continuity{grid-column:1;}
+    .active-editorial{grid-template-rows:auto;}
+    .active-workout-title,.active-workout-copy,.active-pull-quote,.comparison-figure{grid-column:1;grid-row:auto;}
+    .active-workout-copy{max-width:600px;margin-top:22px;}
+    .active-pull-quote{margin-top:26px;}
+    .comparison-figure{max-width:680px;margin-top:34px;}
+    .replacement-story{grid-template-columns:1fr;}
+    .replacement-intro{max-width:540px;}
+    .replacement-caption{max-width:520px;}
+    .automation-intro{max-width:640px;}
+    .automation-copy{max-width:570px;}
+    .automation-principle{max-width:300px;}
+    .automation-workflow{margin-top:36px;}
+    .recovery-panel{grid-template-columns:1fr;}
+    .recovery-copy{display:grid;grid-template-columns:minmax(200px,.65fr) minmax(0,1.35fr);gap:28px;align-items:start;}
+    .recovery-copy p{margin-top:4px;}
+    .role-process-copy{max-width:650px;}
+    .role-process-body{max-width:600px;}
+    .contribution-diagram{margin-top:4px;}
+    .role-title-line{display:inline;}
+    .reflection-opening{grid-template-columns:1fr;gap:30px;}
+    .reflection-body{max-width:680px;}
+    .stride-next-projects-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .site-nav-link{font-size:11px;white-space:nowrap;flex-shrink:0;}
+    .project-nav-links{gap:11px;}
+    .nav-dot{display:none;}
+    .hero{margin-top:38px;}
+    .hero-grid{gap:24px;}
+    .hero h1{font-size:clamp(43px,13.5vw,58px);}
+    .hero-intro{font-size:16px;line-height:1.65;}
+    .hero-lifecycle{margin-top:16px;font-size:11px;}
+    .hero-visual{aspect-ratio:4/3;margin-top:30px;transform:none;}
+    .hero-screen{top:8%;height:84%;border-radius:8px;box-shadow:0 9px 20px rgba(26,26,26,.12);}
+    .hero-screen-home{left:7%;}
+    .hero-screen-active{top:5%;height:90%;}
+    .hero-screen-review{right:7%;}
+    .project-metadata{column-gap:20px;}
+    .opportunity{margin-top:64px;gap:18px;}
+    .opportunity h2{font-size:clamp(34px,11vw,46px);}
+    .opportunity-copy{font-size:15px;line-height:1.7;}
+    .opportunity-continuity{margin-top:4px;padding:13px 15px;font-size:14px;}
+    .active-workout{margin-top:76px;}
+    .active-workout h2{font-size:clamp(34px,11vw,46px);}
+    .active-workout-copy{font-size:15px;line-height:1.7;}
+    .active-pull-quote{margin-top:24px;max-width:330px;line-height:1.25;}
+    .comparison-figure{max-width:none;}
+    .comparison-grid{grid-template-columns:1fr;gap:30px;}
+    .comparison-connector{display:none;}
+    .comparison-media{overflow:hidden;}
+    .comparison-item--earlier .comparison-media{height:min(160vw,650px);}
+    .comparison-item--earlier .comparison-media img{height:100%;object-fit:cover;object-position:50% 43%;}
+    .comparison-item--current .comparison-media{height:min(108vw,440px);}
+    .comparison-item--current .comparison-media img{height:100%;object-fit:cover;object-position:50% 0;}
+    .replacement-block{margin-top:58px;padding-top:24px;}
+    .replacement-intro h4{font-size:clamp(30px,9.6vw,38px);}
+    .replacement-caption{margin-top:16px;}
+    .replacement-sequence{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:0;padding:2px 42px 14px 2px;margin-right:-20px;overscroll-behavior-inline:contain;scrollbar-width:thin;}
+    .replacement-step{flex:0 0 min(78vw,300px);scroll-snap-align:start;}
+    .replacement-step-heading{min-height:28px;margin-bottom:8px;}
+    .replacement-media,.replacement-step--active .replacement-media,.replacement-step--choose .replacement-media,.replacement-step--confirm .replacement-media,.replacement-step--continue .replacement-media{max-width:none;aspect-ratio:auto;margin-top:0;padding:7px;transform:none;}
+    .replacement-step--confirm .replacement-media img{position:static;width:100%;height:auto;border-radius:7px;}
+    .automation-recovery{margin-top:82px;padding-top:26px;}
+    .automation-intro h2{font-size:clamp(36px,11.5vw,48px);}
+    .automation-copy{margin-top:20px;font-size:15px;line-height:1.7;}
+    .automation-principle{margin-top:26px;padding:17px 18px;}
+    .automation-workflow{grid-template-columns:1fr;gap:38px;margin-top:38px;}
+    .automation-step,.automation-step--paste,.automation-step--resolve,.automation-step--edit{display:grid;grid-template-columns:82px minmax(0,1fr);gap:0;margin-top:0;}
+    .automation-step-heading{display:block;margin:7px 12px 0 0;}
+    .automation-step-number{margin-bottom:10px;}
+    .automation-step-label{display:block;font-size:10px;line-height:1.3;}
+    .automation-step:not(:last-child)::after{top:auto;right:auto;bottom:-30px;left:11px;content:"\2193";font-size:18px;}
+    .automation-media{grid-column:2;grid-row:1;border-radius:10px;}
+    .automation-step--paste .automation-media,.automation-step--review .automation-media,.automation-step--resolve .automation-media,.automation-step--edit .automation-media{aspect-ratio:.82;}
+    .automation-step--paste .automation-media img{object-position:50% 0;}
+    .automation-step--review .automation-media img{object-position:50% 28%;}
+    .automation-step--resolve .automation-media img{object-position:50% 34%;}
+    .automation-step--edit .automation-media img{object-position:50% 0;}
+    .recovery-panel{margin-top:64px;gap:30px;padding:24px 18px;}
+    .recovery-copy{display:block;}
+    .recovery-copy h3{font-size:clamp(29px,9.2vw,38px);}
+    .recovery-copy p{margin-top:16px;font-size:14px;}
+    .recovery-flow{grid-template-columns:1fr;gap:34px;}
+    .recovery-step{display:grid;grid-template-columns:82px minmax(0,1fr);}
+    .recovery-step-heading{display:block;margin:5px 12px 0 0;}
+    .recovery-step-number{margin-bottom:9px;}
+    .recovery-step-label{display:block;font-size:9px;}
+    .recovery-step:not(:last-child)::after{top:auto;right:auto;bottom:-27px;left:10px;content:"\2193";font-size:17px;transform:none;}
+    .recovery-media{grid-column:2;grid-row:1;aspect-ratio:1.25;}
+    .role-process{margin-top:84px;padding-top:26px;}
+    .role-process-grid{gap:44px;}
+    .role-process-copy h2{font-size:clamp(40px,11.2vw,47px);}
+    .role-process-intro{margin-top:22px;font-size:16px;line-height:1.6;}
+    .role-process-body{margin-top:26px;padding-top:20px;font-size:15px;line-height:1.7;}
+    .role-process-callout{margin-top:28px;padding:22px 20px;}
+    .role-process-callout p{font-size:clamp(21px,6.8vw,27px);}
+    .contribution-block{padding:22px 20px;}
+    .contribution-block-grid,.codex-block .contribution-block-grid,.iteration-block-grid{grid-template-columns:1fr;gap:20px;}
+    .contribution-block h3{font-size:28px;}
+    .contribution-block ul{margin-top:18px;}
+    .contribution-block li{padding-left:17px;font-size:14px;line-height:1.46;}
+    .contribution-block li+li{margin-top:9px;}
+    .contribution-statement,.iteration-statement{border-top:1px solid currentColor;border-left:0;padding:16px 0 0;}
+    .codex-block{width:94%;margin-left:6%;padding-top:20px;padding-bottom:20px;}
+    .role-flow-arrow{width:38px;height:38px;margin:-4px auto;font-size:21px;}
+    .iteration-block{width:100%;margin-left:0;padding:22px 20px;}
+    .iteration-block h3{font-size:clamp(24px,7.2vw,29px);}
+    .iteration-copy,.iteration-statement{font-size:14px;}
+    .process-summary{margin-top:46px;grid-template-columns:1fr;padding-top:0;}
+    .process-summary-item,.process-summary-item:first-child,.process-summary-item:last-child{padding:17px 0;}
+    .process-summary-item+.process-summary-item{border-top:1px solid rgba(2,18,238,.34);border-left:0;}
+    .process-summary-description{margin-top:6px;font-size:12px;}
+    .reflection{margin-top:88px;padding-top:26px;}
+    .reflection h2{font-size:clamp(40px,11.2vw,47px);}
+    .reflection-opening{gap:28px;}
+    .reflection-body{font-size:16px;line-height:1.72;}
+    .reflection-body p+p{margin-top:1.3em;}
+    .reflection-principles{margin-top:70px;grid-template-columns:1fr;gap:0;}
+    .reflection-principle{padding:22px 0 28px;}
+    .reflection-principle h3{margin-top:13px;font-size:25px;}
+    .reflection-principle p{margin-top:11px;font-size:14px;line-height:1.62;}
+    .reflection-closing{margin:66px 0 0;border-top-color:rgba(2,18,238,.52);padding-top:38px;}
+    .reflection-closing p{font-size:clamp(29px,8.4vw,35px);line-height:1.3;}
+  }
+  @media (max-width:360px){
+    .site-nav{flex-direction:column;gap:14px;}
+    .project-nav-links{width:100%;justify-content:space-between;gap:8px;}
+    .project-metadata{grid-template-columns:1fr;}
+    .automation-step,.automation-step--paste,.automation-step--resolve,.automation-step--edit,.recovery-step{grid-template-columns:70px minmax(0,1fr);}
+    .role-process-copy h2{font-size:42px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .site-logo,.site-nav-link{transition:none;}
+    .replacement-sequence{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="page-shell">
+  <nav class="site-nav" aria-label="Project navigation">
+    <a href="index.html" class="site-logo" aria-label="Vanessa Rubel, home">VR&nbsp;✦</a>
+    <div class="project-nav-links">
+      <a href="work.html" class="site-nav-link">← Back to Work</a>
+      <span class="nav-dot" aria-hidden="true">·</span>
+      <a href="index.html" class="site-nav-link">Home</a>
+      <span class="nav-dot" aria-hidden="true">·</span>
+      <a href="about.html" class="site-nav-link">Info</a>
+    </div>
+  </nav>
+
+  <article class="case-study" id="main-content" role="main">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Product direction · UX design · Workout app</span>
+          <h1>
+            <span class="hero-title-prefix">STRIDE: Designing for</span>
+            <span class="hero-highlight-line"><span class="hero-accent">workouts that change.</span></span>
+          </h1>
+        </div>
+        <div class="hero-copy">
+          <p class="hero-intro">I designed and directed STRIDE, a mobile-first workout planning and logging app built for the realities of active training.</p>
+          <div class="hero-lifecycle" aria-label="STRIDE workout lifecycle">Plan → Build → Train → Review → Repeat</div>
+        </div>
+      </div>
+
+      <figure class="hero-visual" aria-label="STRIDE product screens across the workout lifecycle">
+        <img class="hero-screen hero-screen-home" src="images/stride/home-dashboard.png" width="402" height="874" decoding="async" alt="STRIDE home dashboard showing a live workout, upcoming planning actions, and recent workout history.">
+        <img class="hero-screen hero-screen-active" src="images/stride/active-workout-editable.png" width="402" height="874" decoding="async" fetchpriority="high" alt="STRIDE Active Workout screen with editable strength and cardio entries during a three-exercise workout.">
+        <img class="hero-screen hero-screen-review" src="images/stride/workout-completion-review.png" width="402" height="874" decoding="async" alt="STRIDE completion review showing saved workout totals and a completed Back Squat exercise summary.">
+      </figure>
+
+      <dl class="project-metadata" aria-label="Project details">
+        <div>
+          <dt>Project</dt>
+          <dd>STRIDE</dd>
+        </div>
+        <div>
+          <dt>Year</dt>
+          <dd>2026</dd>
+        </div>
+        <div>
+          <dt>Type</dt>
+          <dd>Independent workout app</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>Personal project</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd>Product direction, UX design, information architecture, prioritization, prompt engineering, review, manual testing, and product validation</dd>
+        </div>
+        <div>
+          <dt>Technical partner</dt>
+          <dd>Codex for AI-assisted implementation</dd>
+        </div>
+        <div>
+          <dt>Platform</dt>
+          <dd>Mobile-first web application</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd>React, TypeScript, Vite, Supabase, Playwright, Codex</dd>
+        </div>
+      </dl>
+    </header>
+
+    <section class="opportunity" aria-labelledby="opportunity-heading">
+      <div>
+        <span class="eyebrow">The opportunity</span>
+        <h2 id="opportunity-heading">From faster logging to a full workout lifecycle.</h2>
+      </div>
+      <div class="opportunity-copy">
+        <p>I built STRIDE because the workout tools I used felt slow, fragmented, and difficult to adjust during training. Logging speed was the original problem, but planning, building, tracking, and reusing workouts also felt disconnected.</p>
+      </div>
+      <p class="opportunity-continuity">STRIDE connects planning, active logging, and review so the workout remains continuous from setup through completion.</p>
+    </section>
+
+    <section class="active-workout" aria-labelledby="active-workout-heading">
+      <div class="active-editorial">
+        <div class="active-workout-title">
+          <span class="eyebrow">Active workout</span>
+          <h2 id="active-workout-heading">The workout could change without losing momentum.</h2>
+        </div>
+        <div class="active-workout-copy">
+          <p class="active-opening">Equipment becomes unavailable, exercises change, and the interface needs to keep pace.</p>
+          <p>I redesigned completed exercises as compact summaries so logged work stayed accessible without competing with the current movement. Exercise replacement preserves compatible values and confirms changes that could remove existing work.</p>
+        </div>
+        <blockquote class="active-pull-quote">The interface should become lighter as the workout progresses.</blockquote>
+        <figure class="comparison-figure">
+          <div class="comparison-grid">
+            <div class="comparison-item comparison-item--earlier">
+              <span class="evidence-label">Earlier</span>
+              <div class="comparison-media">
+                <img src="images/stride/comparison-01-historical-expanded-completed.png" width="402" height="874" loading="lazy" decoding="async" alt="Earlier STRIDE Active Workout design showing three completed exercises as fully expanded cards.">
+              </div>
+            </div>
+            <span class="comparison-connector" aria-hidden="true"></span>
+            <div class="comparison-item comparison-item--current">
+              <span class="evidence-label">Current</span>
+              <div class="comparison-media">
+                <img src="images/stride/comparison-02-current-compact-completed.png" width="402" height="874" loading="lazy" decoding="async" alt="Current STRIDE Active Workout design showing the same completed exercises as compact green summary cards.">
+              </div>
+            </div>
+          </div>
+          <figcaption class="evidence-caption">Completed exercises moved from fully expanded cards to compact summaries that remain accessible when needed.</figcaption>
+        </figure>
+      </div>
+
+      <div class="replacement-block">
+        <div class="replacement-story">
+          <div class="replacement-intro">
+            <h3>Exercise replacement</h3>
+            <h4>Replace an exercise without breaking the flow.</h4>
+            <p class="replacement-caption">Choose a replacement, confirm the change, and continue in the active workout.</p>
+          </div>
+          <ol class="replacement-sequence" tabindex="0" aria-label="Four-step exercise replacement sequence">
+            <li class="replacement-step replacement-step--active">
+              <div class="replacement-step-heading">
+                <span class="replacement-step-number">01</span>
+                <span class="replacement-step-label">Active workout</span>
+              </div>
+              <figure class="replacement-media">
+                <img src="images/stride/replacement-01-active-with-values.png" width="402" height="874" loading="lazy" decoding="async" alt="Active Workout before replacement, with Back Squat values and completed sets alongside two other exercises.">
+              </figure>
+            </li>
+            <li class="replacement-step replacement-step--choose">
+              <div class="replacement-step-heading">
+                <span class="replacement-step-number">02</span>
+                <span class="replacement-step-label">Choose</span>
+              </div>
+              <figure class="replacement-media">
+                <img src="images/stride/replacement-02-movement-picker.png" width="402" height="874" loading="lazy" decoding="async" alt="Movement picker searching for Bench Press while replacing Back Squat.">
+              </figure>
+            </li>
+            <li class="replacement-step replacement-step--confirm">
+              <div class="replacement-step-heading">
+                <span class="replacement-step-number">03</span>
+                <span class="replacement-step-label">Confirm</span>
+              </div>
+              <figure class="replacement-media">
+                <img src="images/stride/replacement-03-confirmation.png" width="402" height="874" loading="lazy" decoding="async" alt="Confirmation dialog explaining that compatible Back Squat workout data will be preserved when replacing it with Bench Press.">
+              </figure>
+            </li>
+            <li class="replacement-step replacement-step--continue">
+              <div class="replacement-step-heading">
+                <span class="replacement-step-number">04</span>
+                <span class="replacement-step-label">Continue</span>
+              </div>
+              <figure class="replacement-media">
+                <img src="images/stride/replacement-04-preserved-result.png" width="402" height="874" loading="lazy" decoding="async" alt="Active Workout after replacement, with Bench Press retaining the compatible weights, reps, notes, and completion state.">
+              </figure>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="automation-recovery" aria-labelledby="automation-heading">
+      <div class="automation-editorial">
+        <div class="automation-intro">
+          <span class="eyebrow">Automation + Recovery</span>
+          <h2 id="automation-heading">Automation that stays reviewable</h2>
+          <div class="automation-copy">
+            <p>STRIDE reduces the effort of repetitive setup while keeping important decisions in the user’s control.</p>
+            <p>Paste a workout, review uncertain matches, resolve them, and turn the result into an editable plan.</p>
+          </div>
+          <aside class="automation-principle" aria-label="Key principle">
+            <span class="automation-principle-label">Key principle</span>
+            <p>Uncertain matches stay visible until the user resolves them.</p>
+          </aside>
+        </div>
+
+        <ol class="automation-workflow" aria-label="Four-step workout automation workflow">
+          <li class="automation-step automation-step--paste">
+            <div class="automation-step-heading">
+              <span class="automation-step-number">01</span>
+              <span class="automation-step-label">Paste</span>
+            </div>
+            <figure class="automation-media">
+              <img src="images/stride/import-01-pasted-workout.png" width="402" height="874" loading="lazy" decoding="async" alt="STRIDE workout import with a pasted Lower Body Day plan ready for review.">
+            </figure>
+          </li>
+          <li class="automation-step automation-step--review">
+            <div class="automation-step-heading">
+              <span class="automation-step-number">02</span>
+              <span class="automation-step-label">Review</span>
+            </div>
+            <figure class="automation-media">
+              <img src="images/stride/import-02-review-needs-selection.png" width="402" height="874" loading="lazy" decoding="async" alt="Imported workout review showing matched movements and a Leg Curl entry that needs a movement selection.">
+            </figure>
+          </li>
+          <li class="automation-step automation-step--resolve">
+            <div class="automation-step-heading">
+              <span class="automation-step-number">03</span>
+              <span class="automation-step-label">Resolve</span>
+            </div>
+            <figure class="automation-media">
+              <img src="images/stride/import-03-review-resolved.png" width="402" height="874" loading="lazy" decoding="async" alt="Imported workout review after Leg Curl is resolved to Seated Leg Curl and all movements are matched.">
+            </figure>
+          </li>
+          <li class="automation-step automation-step--edit">
+            <div class="automation-step-heading">
+              <span class="automation-step-number">04</span>
+              <span class="automation-step-label">Edit</span>
+            </div>
+            <figure class="automation-media">
+              <img src="images/stride/import-04-editable-builder-result.png" width="402" height="874" loading="lazy" decoding="async" alt="Editable STRIDE Builder plan created from the reviewed workout import.">
+            </figure>
+          </li>
+        </ol>
+      </div>
+
+      <aside class="recovery-panel" aria-labelledby="recovery-heading">
+        <div class="recovery-copy">
+          <div>
+            <span class="eyebrow">Recovery</span>
+            <h3 id="recovery-heading">Recovery that protects momentum</h3>
+          </div>
+          <p>If a session is interrupted, the active workout remains available so the user can continue without rebuilding progress.</p>
+        </div>
+        <ol class="recovery-flow" aria-label="Three-step interrupted workout recovery sequence">
+          <li class="recovery-step recovery-step--return">
+            <div class="recovery-step-heading">
+              <span class="recovery-step-number">01</span>
+              <span class="recovery-step-label">Return</span>
+            </div>
+            <figure class="recovery-media">
+              <img src="images/stride/recovery-02-home-after-reload.png" width="402" height="874" loading="lazy" decoding="async" alt="STRIDE home screen after reload showing the active workout ready to resume.">
+            </figure>
+          </li>
+          <li class="recovery-step recovery-step--continue">
+            <div class="recovery-step-heading">
+              <span class="recovery-step-number">02</span>
+              <span class="recovery-step-label">Continue</span>
+            </div>
+            <figure class="recovery-media">
+              <img src="images/stride/recovery-03-continue-dialog.png" width="402" height="874" loading="lazy" decoding="async" alt="STRIDE start workout dialog offering to continue today’s active session or discard it and start new.">
+            </figure>
+          </li>
+          <li class="recovery-step recovery-step--resume">
+            <div class="recovery-step-heading">
+              <span class="recovery-step-number">03</span>
+              <span class="recovery-step-label">Resume</span>
+            </div>
+            <figure class="recovery-media">
+              <img src="images/stride/recovery-04-restored-active-workout.png" width="402" height="874" loading="lazy" decoding="async" alt="Restored STRIDE active workout with the previously entered exercise values and completed sets preserved.">
+            </figure>
+          </li>
+        </ol>
+      </aside>
+    </section>
+
+    <section class="role-process" aria-labelledby="role-process-heading">
+      <div class="role-process-grid">
+        <div class="role-process-copy">
+          <span class="eyebrow">Role &amp; AI-assisted process</span>
+          <h2 id="role-process-heading"><span class="role-title-line">Product direction,</span> <span class="role-title-line">accelerated</span> <span class="role-title-line">by AI.</span></h2>
+          <p class="role-process-intro">STRIDE is the result of product thinking, design decisions, and continuous iteration, supported by AI-assisted implementation.</p>
+          <div class="role-process-body">
+            <p>I conceived and directed STRIDE—its priorities, workflows, interaction rules, and completion standards. I wrote implementation briefs and reviewed every change in the working product.</p>
+            <p>Codex accelerated implementation, testing, and iteration. Product direction, UX judgment, prioritization, and final acceptance remained mine.</p>
+          </div>
+          <blockquote class="role-process-callout">
+            <p>AI handled the repetitive.<br>I handled the decisions that matter.</p>
+          </blockquote>
+        </div>
+
+        <div class="contribution-diagram" aria-label="Vanessa-led product process with Codex implementation support and continuous review">
+          <section class="contribution-block vanessa-block" aria-labelledby="vanessa-contribution-heading">
+            <div class="contribution-block-grid">
+              <div>
+                <h3 id="vanessa-contribution-heading">Vanessa</h3>
+                <ul>
+                  <li>Identify the opportunity and define the problem</li>
+                  <li>Set product priorities and success principles</li>
+                  <li>Design workflows and interaction rules</li>
+                  <li>Write implementation briefs and requirements</li>
+                  <li>Review in context, test, and accept changes</li>
+                </ul>
+              </div>
+              <p class="contribution-statement">Product direction, UX decisions, and final acceptance stay with me.</p>
+            </div>
+          </section>
+
+          <span class="role-flow-arrow" aria-hidden="true">↓</span>
+
+          <section class="contribution-block codex-block" aria-labelledby="codex-contribution-heading">
+            <div class="contribution-block-grid">
+              <div>
+                <h3 id="codex-contribution-heading">Codex</h3>
+                <ul>
+                  <li>Implement features and components</li>
+                  <li>Write and run automated tests</li>
+                  <li>Refactor and optimize code</li>
+                  <li>Validate changes and prevent regressions</li>
+                </ul>
+              </div>
+              <p class="contribution-statement">Implementation support and verification.</p>
+            </div>
+          </section>
+
+          <span class="role-flow-arrow" aria-hidden="true">↓</span>
+
+          <section class="iteration-block" aria-labelledby="iteration-heading">
+            <div class="iteration-block-grid">
+              <div>
+                <h3 id="iteration-heading">Review → Test → Refine</h3>
+                <p class="iteration-copy">Each cycle improves the product. Nothing ships without review and testing.</p>
+              </div>
+              <p class="iteration-statement">Continuous iteration builds a better workout experience.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="process-summary" aria-label="Process summary">
+        <div class="process-summary-item">
+          <span class="process-summary-icon" aria-hidden="true">✓</span>
+          <span>
+            <span class="process-summary-term">Directed</span>
+            <span class="process-summary-description">Product strategy, UX, priorities, and requirements</span>
+          </span>
+        </div>
+        <div class="process-summary-item">
+          <span class="process-summary-icon" aria-hidden="true">✦</span>
+          <span>
+            <span class="process-summary-term">Implemented</span>
+            <span class="process-summary-description">Codex handled the build, tests, and automation</span>
+          </span>
+        </div>
+        <div class="process-summary-item">
+          <span class="process-summary-icon" aria-hidden="true">◎</span>
+          <span>
+            <span class="process-summary-term">Tested</span>
+            <span class="process-summary-description">Every change was tested on mobile</span>
+          </span>
+        </div>
+        <div class="process-summary-item">
+          <span class="process-summary-icon" aria-hidden="true">↻</span>
+          <span>
+            <span class="process-summary-term">Refined</span>
+            <span class="process-summary-description">Requirements evolved through real-world use and iteration</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="reflection" aria-labelledby="reflection-heading">
+      <div class="reflection-opening">
+        <h2 id="reflection-heading">Reflection</h2>
+        <div class="reflection-body">
+          <p>Building STRIDE changed my understanding of what makes a product feel finished. I expected visual polish to be the hardest part, but the deeper challenge was making every interaction feel as considered as the interface looked.</p>
+          <p>I originally thought the Build page would be the center of the product. Through real use, I realized the active workout mattered more. Planning happens occasionally; logging happens every session. That shifted my focus toward speed, continuity, and removing anything that interrupted the workout.</p>
+          <p>My standard became simple: a feature was finished when I could use it without thinking about the interface. Working with Codex made it possible to turn ideas into working experiences quickly, but the real value came from testing those ideas, recognizing friction, and refining them until the product felt natural.</p>
+        </div>
+      </div>
+
+      <ol class="reflection-principles" aria-label="Product principles">
+        <li class="reflection-principle">
+          <span class="reflection-principle-number">01</span>
+          <h3>Look beyond the screen</h3>
+          <p>A product can look polished and still feel difficult. The experience has to carry the same level of care as the visual design.</p>
+        </li>
+        <li class="reflection-principle">
+          <span class="reflection-principle-number">02</span>
+          <h3>Design around real behavior</h3>
+          <p>The most important workflow is not always the one you expect. Real use revealed where attention and refinement mattered most.</p>
+        </li>
+        <li class="reflection-principle">
+          <span class="reflection-principle-number">03</span>
+          <h3>Refine until the interface disappears</h3>
+          <p>The strongest interactions support the user's goal without calling attention to themselves.</p>
+        </li>
+      </ol>
+
+      <blockquote class="reflection-closing">
+        <p>STRIDE reinforced something I'll carry into every product I build: the most meaningful improvements rarely come from adding more. They come from understanding where people lose momentum, then designing experiences that help them keep moving.</p>
+      </blockquote>
+    </section>
+
+    <nav class="stride-next-projects" aria-labelledby="next-projects-heading">
+      <h2 id="next-projects-heading">Next Projects</h2>
+      <div class="stride-next-projects-grid">
+        <article class="stride-next-project">
+          <span class="stride-next-project-category">Brand strategy · Customer experience</span>
+          <h3>Kith</h3>
+          <a class="stride-next-project-link" href="project-kith.html">View Project →</a>
+        </article>
+        <article class="stride-next-project">
+          <span class="stride-next-project-category">Editorial design · Art direction</span>
+          <h3>Concrete Runways</h3>
+          <a class="stride-next-project-link" href="project-concrete-runways.html">View Project →</a>
+        </article>
+      </div>
+    </nav>
+  </article>
+</div>
+</body>
+</html>

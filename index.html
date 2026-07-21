@@ -25,25 +25,48 @@
   ::selection{background:#0212EE;color:#FEC6E9;}
   .skip-link{position:fixed;z-index:1000;top:12px;left:20px;transform:translateY(-160%);background:#0212EE;color:#fff;padding:10px 14px;border-radius:6px;font:600 12px/1.2 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;}
   .skip-link:focus{transform:translateY(0);}
-  .site-nav{width:100%;max-width:1180px;margin:0 auto;}
+  .site-nav{position:relative;z-index:3;width:100%;max-width:1180px;margin:0 auto;transform:translate3d(0,var(--nav-counter-y,0px),0);will-change:transform;}
   .site-logo{min-height:44px;display:inline-flex!important;align-items:center;transition:background-color 180ms ease,color 180ms ease;}
   .site-nav-links{padding-top:0!important;}
   .site-nav-link{display:inline-flex;align-items:center;min-height:44px;transition:color 180ms ease;}
   .site-logo:hover{background:#D20001!important;color:#fff!important;}
   .site-nav-link:hover{color:#D20001!important;}
   a:focus-visible{outline:2px solid #D20001;outline-offset:4px;border-radius:4px;}
-  .featured-project-grid img{display:block;width:100%;height:100%;object-fit:cover;border-radius:8px;}
+  .home-stage{position:relative;display:grid;grid-template-columns:minmax(250px,.34fr) minmax(0,1.66fr);column-gap:clamp(36px,4vw,58px);min-height:calc(100vh - clamp(20px,3vw,40px) - 44px);min-height:calc(100svh - clamp(20px,3vw,40px) - 44px);}
+  .home-opening{z-index:2;grid-column:1/-1;grid-row:1;min-width:0;transform:translate3d(0,var(--hero-counter-y,0px),0);will-change:transform;}
+  .home-title{transform:translate3d(0,0,0) scale(var(--title-scale,1));transform-origin:left top;will-change:transform;}
+  .home-tagline{max-width:440px;transform:translate3d(0,var(--tagline-y,0px),0) scale(var(--tagline-scale,1));transform-origin:left top;}
+  .see-work-button{display:inline-flex;min-height:48px;margin:clamp(24px,3vw,38px) 0 0;align-items:center;border:1px solid rgba(2,18,238,.5);border-radius:24px;background:transparent;color:#0212EE;padding:0 18px;font:600 12px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;opacity:var(--button-opacity,1);transform:translate3d(0,var(--button-y,0px),0);transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease;}
+  .see-work-button:hover{background:#0212EE;border-color:#0212EE;color:#FEC6E9;}
+  .see-work-button:focus-visible{outline:2px solid #D20001;outline-offset:4px;}
+  .featured-project-track{z-index:1;grid-column:2;grid-row:1;min-width:0;margin-top:clamp(20px,2.5vw,34px);padding-bottom:var(--transition-distance,100vh);}
+  .featured-project-anchor{transform:translate3d(0,var(--grid-counter-y,0px),0);will-change:transform;}
+  .featured-project-grid{min-width:0;opacity:var(--grid-opacity,0);pointer-events:none;transform:translate3d(0,var(--grid-y,100vh),0);will-change:transform,opacity;}
+  .featured-project-grid.is-reachable{pointer-events:auto;}
+  .featured-project-media{position:relative;isolation:isolate;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:8px;}
+  .featured-project-image{display:block;width:100%;height:100%;object-fit:cover;}
+  .featured-project-title{margin:0;color:#D20001;font-size:11px;font-weight:600;line-height:1.35;letter-spacing:.08em;text-transform:uppercase;}
+  .featured-project-description{margin:8px 0 0;max-width:46em;color:#1a1a1a;font-size:14px;line-height:1.5;}
+  .stride-collage{background:#FAF9F1;border:1px solid rgba(2,18,238,.2);}
+  .stride-collage-screen{position:absolute;top:7%;display:block;width:auto;height:86%;border:1px solid rgba(2,18,238,.16);border-radius:8px;box-shadow:0 10px 22px rgba(26,26,26,.12);}
+  .stride-collage-screen--home{left:26%;transform:rotate(-4deg);}
+  .stride-collage-screen--active{z-index:2;left:50%;top:5%;height:90%;transform:translateX(-50%) rotate(1deg);}
+  .stride-collage-screen--review{right:26%;transform:rotate(4deg);}
   .featured-project-link:focus-visible{outline-offset:8px;}
   @media (max-width:820px){
     .featured-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
-    .featured-project-grid>.featured-project-link:first-child{grid-column:1/-1;}
   }
   @media (max-width:640px){
+    .home-stage{grid-template-columns:1fr;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);}
+    .home-opening,.featured-project-track{grid-column:1;grid-row:1;}
+    .home-title{font-size:clamp(66px,17vw,78px)!important;}
+    .see-work-button{min-height:48px;margin-top:24px;}
+    .featured-project-track{margin-top:170px;}
     .featured-project-grid{grid-template-columns:1fr!important;gap:clamp(28px,8vw,40px)!important;}
-    .featured-project-grid>.featured-project-link:first-child{grid-column:auto;}
   }
   @media (prefers-reduced-motion:reduce){
-    .site-logo,.site-nav-link{transition:none;}
+    .site-logo,.site-nav-link,.see-work-button{transition:none;}
+    .site-nav,.home-opening,.home-title,.home-tagline,.see-work-button,.featured-project-anchor,.featured-project-grid{will-change:auto;}
   }
 </style>
 
@@ -63,35 +86,231 @@
     </div>
   </nav>
 
-  <main id="main-content">
+  <main id="main-content" class="home-stage">
+  <div class="home-opening">
   <header style="flex:0 0 auto;margin-top:clamp(20px,3.2vw,44px);">
-    <h1 style="margin:0;color:#0212EE;font-weight:700;font-size:clamp(58px,12vw,168px);line-height:.84;letter-spacing:-.035em;">
+    <h1 class="home-title" style="margin:0;color:#0212EE;font-weight:700;font-size:clamp(68px,13.7vw,196px);line-height:.84;letter-spacing:-.035em;">
       <span style="display:block;">VANESSA</span>
       <span style="display:inline-block;background:#D20001;color:#fff;padding:0 .14em 0.04em;border-radius:9px;transform:rotate(-2.5deg);margin-top:.06em;">RUBEL</span>
     </h1>
-    <p style="margin:clamp(18px,2vw,28px) 0 0;color:#D20001;font-size:clamp(15px,1.5vw,21px);font-weight:600;letter-spacing:-.005em;">Connecting culture, strategy, and design.</p>
+    <p class="home-tagline" style="margin:clamp(18px,2vw,28px) 0 0;color:#D20001;font-size:clamp(15px,1.5vw,21px);font-weight:600;letter-spacing:-.005em;">Connecting culture, strategy, and design.</p>
   </header>
 
-  <section class="featured-project-grid" aria-label="Featured projects" style="margin-top:clamp(26px,3.2vw,46px);display:grid;grid-template-columns:1.9fr 1fr 1fr;gap:clamp(16px,2.4vw,38px);align-items:start;">
+  <button class="see-work-button" type="button" aria-controls="selected-work" aria-expanded="false">See work&nbsp;↓</button>
+  </div>
+
+  <div class="featured-project-track">
+  <div class="featured-project-anchor">
+  <section id="selected-work" class="featured-project-grid" aria-label="Featured projects" aria-hidden="true" inert style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4vw,38px);align-items:start;">
+
+    <a href="project-stride.html" class="featured-project-link" style="text-decoration:none;color:inherit;"><figure style="margin:0;transform:rotate(1.4deg);">
+      <div class="featured-project-media stride-collage" role="img" aria-label="STRIDE product screens across the workout lifecycle">
+        <img class="stride-collage-screen stride-collage-screen--home" src="images/stride/home-dashboard.png" width="402" height="874" decoding="async" alt="">
+        <img class="stride-collage-screen stride-collage-screen--active" src="images/stride/active-workout-editable.png" width="402" height="874" fetchpriority="high" decoding="async" alt="">
+        <img class="stride-collage-screen stride-collage-screen--review" src="images/stride/workout-completion-review.png" width="402" height="874" decoding="async" alt="">
+      </div>
+      <figcaption style="margin:11px 2px 0;">
+        <h2 class="featured-project-title">STRIDE: Product Design</h2>
+        <p class="featured-project-description">A mobile workout planning and logging app designed around real training behavior, continuity, and speed.</p>
+      </figcaption>
+    </figure></a>
 
     <a href="project-concrete-runways.html" class="featured-project-link" style="text-decoration:none;color:inherit;"><figure style="margin:0;transform:rotate(-1.6deg);">
-      <img src="images/concrete-runways/raw/concrete-runways-cover.jpg" srcset="images/concrete-runways/raw/concrete-runways-cover.jpg 2516w" sizes="(max-width:820px) calc(100vw - 40px), min(49vw,622px)" width="2516" height="3256" fetchpriority="high" decoding="async" alt="Concrete Runways magazine cover with a city skyline and bold yellow title" style="aspect-ratio:16/10;object-position:top center;background:#D20001;">
-      <figcaption style="margin:11px 2px 0;color:#D20001;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;">Concrete Runways / Editorial Design</figcaption>
+      <div class="featured-project-media" style="background:#D20001;"><img class="featured-project-image" src="images/concrete-runways/raw/concrete-runways-cover.jpg" srcset="images/concrete-runways/raw/concrete-runways-cover.jpg 2516w" sizes="(max-width:640px) calc(100vw - 40px), min(46vw,571px)" width="2516" height="3256" loading="lazy" decoding="async" alt="Concrete Runways magazine cover with a city skyline and bold yellow title" style="object-position:top center;"></div>
+      <figcaption style="margin:11px 2px 0;">
+        <h2 class="featured-project-title">Concrete Runways</h2>
+        <p class="featured-project-description">A print magazine exploring the intersections of fashion, sport culture, and streetwear, where editorial sophistication meets raw street energy.</p>
+      </figcaption>
     </figure></a>
 
     <a href="project-tiffany-wendel.html" class="featured-project-link" style="text-decoration:none;color:inherit;"><figure style="margin:0;transform:rotate(2.4deg);margin-top:clamp(20px,3vw,52px);">
-      <div role="img" aria-label="Fashion styling mood board with clothing racks, outfits, and accessories" style="width:100%;aspect-ratio:3/4;background-image:url('images/tiffany-wendel/raw/tiffany-styling-collage-optimized.webp');background-size:cover;background-position:center 40%;background-repeat:no-repeat;border-radius:8px;background-color:#0212EE;"></div>
-      <figcaption style="margin:11px 2px 0;color:#D20001;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;">Tiffany Wendel / Growth Strategy</figcaption>
+      <div class="featured-project-media" role="img" aria-label="Fashion styling mood board with clothing racks, outfits, and accessories" style="background-image:url('images/tiffany-wendel/raw/tiffany-styling-collage-optimized.webp');background-size:cover;background-position:center 40%;background-repeat:no-repeat;background-color:#0212EE;"></div>
+      <figcaption style="margin:11px 2px 0;">
+        <h2 class="featured-project-title">Tiffany Wendel: Digital Growth Strategy</h2>
+        <p class="featured-project-description">Partnered with stylist Tiffany Wendel to drive growth across Pinterest, LTK, and ShopMy by blending fashion expertise with strategic digital marketing.</p>
+      </figcaption>
     </figure></a>
 
     <a href="project-kith.html" class="featured-project-link" style="text-decoration:none;color:inherit;"><figure style="margin:0;transform:rotate(-2deg);margin-top:clamp(8px,1.4vw,22px);">
-      <div role="img" aria-label="Kith Miami Beach interior with a pale blue arched hallway" style="width:100%;aspect-ratio:3/4;background-image:url('images/kith/HERO.webp');background-size:cover;background-position:center center;background-repeat:no-repeat;border-radius:8px;background-color:#FEC6E9;"></div>
-      <figcaption style="margin:11px 2px 0;color:#D20001;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;">Kith / Brand Experience</figcaption>
+      <div class="featured-project-media" role="img" aria-label="Kith Miami Beach interior with a pale blue arched hallway" style="background-image:url('images/kith/HERO.webp');background-size:cover;background-position:center center;background-repeat:no-repeat;background-color:#FEC6E9;"></div>
+      <figcaption style="margin:11px 2px 0;">
+        <h2 class="featured-project-title">Kith: Client Experience &amp; Brand Insight</h2>
+        <p class="featured-project-description">Customer experience associate at Kith Miami Beach. Observing how a global brand builds culture, connection, and consistency across every touchpoint.</p>
+      </figcaption>
     </figure></a>
 
   </section>
+  </div>
+  </div>
   </main>
 
 </div>
+<script>
+  (() => {
+    const stage = document.querySelector('.home-stage');
+    const navigation = document.querySelector('.site-nav');
+    const opening = document.querySelector('.home-opening');
+    const title = document.querySelector('.home-title');
+    const tagline = document.querySelector('.home-tagline');
+    const gridAnchor = document.querySelector('.featured-project-anchor');
+    const grid = document.getElementById('selected-work');
+    const seeWorkButton = document.querySelector('.see-work-button');
+    const homeLink = document.querySelector('.site-nav-link[aria-current="page"]');
+    const firstProject = grid.querySelector('.featured-project-link');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileLayout = window.matchMedia('(max-width:640px)');
+    let transitionDistance = window.innerHeight;
+    let compactTitleScale = 1;
+    let compactTaglineScale = 1;
+    let compactShift = 0;
+    let frameRequested = false;
+    let measurementRequested = true;
+    let lastAnimationPosition = -1;
+    let gridReachableState;
+    let buttonHiddenState;
+    let buttonScrollActive = false;
+    let buttonScrollTimer;
+
+    const clamp = (value, minimum = 0, maximum = 1) => Math.min(maximum, Math.max(minimum, value));
+    const mix = (start, end, progress) => start + (end - start) * progress;
+    const toPixels = value => `${value.toFixed(3)}px`;
+
+    const setGridAccessibility = (reachable) => {
+      if (reachable === gridReachableState) return;
+      gridReachableState = reachable;
+      grid.classList.toggle('is-reachable', reachable);
+      grid.toggleAttribute('inert', !reachable);
+      grid.setAttribute('aria-hidden', String(!reachable));
+      grid.style.setProperty('--grid-opacity', Number(reachable));
+      seeWorkButton.setAttribute('aria-expanded', String(reachable));
+    };
+
+    const setButtonHidden = hidden => {
+      if (hidden === buttonHiddenState) return;
+      buttonHiddenState = hidden;
+      seeWorkButton.style.visibility = hidden ? 'hidden' : 'visible';
+      seeWorkButton.style.pointerEvents = hidden ? 'none' : 'auto';
+      if (hidden) {
+        seeWorkButton.setAttribute('aria-hidden', 'true');
+        seeWorkButton.setAttribute('tabindex', '-1');
+      } else {
+        seeWorkButton.removeAttribute('aria-hidden');
+        seeWorkButton.removeAttribute('tabindex');
+      }
+    };
+
+    const measure = () => {
+      gridAnchor.style.setProperty('--grid-counter-y', '0px');
+      grid.style.setProperty('--grid-y', '0px');
+
+      const gridTopAtPageStart = grid.getBoundingClientRect().top + window.scrollY;
+      const openingTaglineSize = parseFloat(window.getComputedStyle(tagline).fontSize);
+      const compactTaglineSize = mobileLayout.matches ? 13 : 14;
+
+      transitionDistance = Math.max(320, window.innerHeight - gridTopAtPageStart);
+      compactTitleScale = mobileLayout.matches ? .58 : .24;
+      compactTaglineScale = compactTaglineSize / openingTaglineSize;
+      compactShift = mobileLayout.matches ? -57 : -258;
+
+      stage.style.setProperty('--transition-distance', toPixels(transitionDistance));
+      lastAnimationPosition = -1;
+    };
+
+    const render = () => {
+      const scrollPosition = Math.max(0, window.scrollY);
+      const animationPosition = Math.min(scrollPosition, transitionDistance);
+      if (animationPosition === lastAnimationPosition) return;
+      lastAnimationPosition = animationPosition;
+
+      const progress = clamp(animationPosition / transitionDistance);
+      const reduced = reducedMotion.matches;
+      const visualProgress = reduced ? Number(scrollPosition > 0) : progress;
+      const buttonOpacity = reduced ? Number(scrollPosition === 0) : clamp(1 - progress / .42);
+      const buttonHidden = reduced ? scrollPosition > 0 : progress >= .42;
+      const gridReachable = scrollPosition > 0;
+
+      navigation.style.setProperty('--nav-counter-y', toPixels(animationPosition));
+      opening.style.setProperty('--hero-counter-y', toPixels(animationPosition));
+      gridAnchor.style.setProperty('--grid-counter-y', toPixels(animationPosition));
+      title.style.setProperty('--title-scale', mix(1, compactTitleScale, visualProgress).toFixed(5));
+      tagline.style.setProperty('--tagline-y', toPixels(mix(0, compactShift, visualProgress)));
+      tagline.style.setProperty('--tagline-scale', mix(1, compactTaglineScale, visualProgress).toFixed(5));
+      seeWorkButton.style.setProperty('--button-y', toPixels(mix(0, compactShift, visualProgress)));
+      seeWorkButton.style.setProperty('--button-opacity', buttonOpacity.toFixed(5));
+      grid.style.setProperty('--grid-y', toPixels(transitionDistance * (1 - progress)));
+
+      if (!gridReachable && grid.contains(document.activeElement)) {
+        seeWorkButton.focus({ preventScroll: true });
+      }
+      setGridAccessibility(gridReachable);
+      setButtonHidden(buttonHidden);
+
+      if (buttonHidden && document.activeElement === seeWorkButton && !buttonScrollActive) {
+        firstProject.focus({ preventScroll: true });
+      }
+
+      if (buttonScrollActive && progress >= .98) {
+        buttonScrollActive = false;
+        window.clearTimeout(buttonScrollTimer);
+        firstProject.focus({ preventScroll: true });
+      }
+    };
+
+    const runFrame = () => {
+      frameRequested = false;
+      if (measurementRequested) {
+        measurementRequested = false;
+        measure();
+      }
+      render();
+    };
+
+    const requestFrame = () => {
+      if (frameRequested) return;
+      frameRequested = true;
+      window.requestAnimationFrame(runFrame);
+    };
+
+    const requestMeasure = () => {
+      measurementRequested = true;
+      requestFrame();
+    };
+
+    seeWorkButton.addEventListener('click', () => {
+      buttonScrollActive = true;
+      window.clearTimeout(buttonScrollTimer);
+      buttonScrollTimer = window.setTimeout(() => {
+        buttonScrollActive = false;
+      }, 1800);
+      window.scrollTo({
+        top: transitionDistance,
+        behavior: reducedMotion.matches ? 'auto' : 'smooth'
+      });
+    });
+
+    homeLink.addEventListener('click', (event) => {
+      if (window.scrollY <= 1) return;
+      event.preventDefault();
+      buttonScrollActive = false;
+      window.clearTimeout(buttonScrollTimer);
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion.matches ? 'auto' : 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', requestFrame, { passive: true });
+    window.addEventListener('resize', requestMeasure);
+    window.addEventListener('load', requestMeasure, { once: true });
+    reducedMotion.addEventListener('change', () => {
+      lastAnimationPosition = -1;
+      requestFrame();
+    });
+    mobileLayout.addEventListener('change', requestMeasure);
+    if (document.fonts) document.fonts.ready.then(requestMeasure);
+
+    requestMeasure();
+  })();
+</script>
 </body>
 </html>
