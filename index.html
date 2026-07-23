@@ -25,291 +25,346 @@
   ::selection{background:#0212EE;color:#FEC6E9;}
   .skip-link{position:fixed;z-index:1000;top:12px;left:20px;transform:translateY(-160%);background:#0212EE;color:#fff;padding:10px 14px;border-radius:6px;font:600 12px/1.2 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;}
   .skip-link:focus{transform:translateY(0);}
-  .site-nav{position:relative;z-index:3;width:100%;max-width:1180px;margin:0 auto;transform:translate3d(0,var(--nav-counter-y,0px),0);will-change:transform;}
-  .site-logo{min-height:44px;display:inline-flex!important;align-items:center;transition:background-color 180ms ease,color 180ms ease;}
-  .site-nav-links{padding-top:0!important;}
-  .site-nav-link{display:inline-flex;align-items:center;min-height:44px;transition:color 180ms ease;}
-  .site-logo:hover{background:#D20001!important;color:#fff!important;}
-  .site-nav-link:hover{color:#D20001!important;}
+  .page-shell{min-height:100vh;min-height:100svh;background:#F3F3E9;color:#1a1a1a;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;padding:clamp(20px,3vw,40px) clamp(20px,4vw,64px) clamp(38px,4vw,58px);overflow-x:hidden;}
+  .editorial-home{display:grid;grid-template-columns:minmax(300px,.34fr) minmax(0,.66fr);gap:clamp(42px,5vw,76px);width:100%;max-width:1180px;margin:0 auto;}
+  .home-left{display:flex;min-width:0;flex-direction:column;}
+  .site-nav{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;}
+  .site-logo{min-height:44px;display:inline-flex;align-items:center;background:#0212EE;color:#FEC6E9;font-size:13px;font-weight:600;letter-spacing:.04em;padding:7px 15px;border-radius:22px;transform:rotate(-3deg);text-decoration:none;transition:background-color 180ms ease,color 180ms ease;}
+  .site-nav-links{display:flex;align-items:center;gap:clamp(10px,1.4vw,18px);}
+  .site-nav-link{display:inline-flex;align-items:center;min-height:44px;color:#0212EE;font-size:11px;font-weight:600;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;transition:color 180ms ease;}
+  .site-nav-link[aria-current="page"]{color:#D20001;}
+  .nav-dot{color:#0212EE;opacity:.35;font-size:11px;}
+  .site-logo:hover{background:#D20001;color:#fff;}
+  .site-nav-link:hover{color:#D20001;}
   a:focus-visible{outline:2px solid #D20001;outline-offset:4px;border-radius:4px;}
-  .home-stage{position:relative;display:grid;grid-template-columns:minmax(250px,.34fr) minmax(0,1.66fr);column-gap:clamp(36px,4vw,58px);min-height:calc(100vh - clamp(20px,3vw,40px) - 44px);min-height:calc(100svh - clamp(20px,3vw,40px) - 44px);}
-  .home-opening{z-index:2;grid-column:1/-1;grid-row:1;min-width:0;transform:translate3d(0,var(--hero-counter-y,0px),0);will-change:transform;}
-  .home-title{transform:translate3d(0,0,0) scale(var(--title-scale,1));transform-origin:left top;will-change:transform;}
-  .home-tagline{max-width:440px;transform:translate3d(0,var(--tagline-y,0px),0) scale(var(--tagline-scale,1));transform-origin:left top;}
-  .see-work-button{display:inline-flex;min-height:48px;margin:clamp(24px,3vw,38px) 0 0;align-items:center;border:1px solid rgba(2,18,238,.5);border-radius:24px;background:transparent;color:#0212EE;padding:0 18px;font:600 12px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;opacity:var(--button-opacity,1);transform:translate3d(0,var(--button-y,0px),0);transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease;}
-  .see-work-button:hover{background:#0212EE;border-color:#0212EE;color:#FEC6E9;}
-  .see-work-button:focus-visible{outline:2px solid #D20001;outline-offset:4px;}
-  .featured-project-track{z-index:1;grid-column:2;grid-row:1;min-width:0;margin-top:clamp(20px,2.5vw,34px);padding-bottom:var(--transition-distance,100vh);}
-  .featured-project-anchor{transform:translate3d(0,var(--grid-counter-y,0px),0);will-change:transform;}
-  .featured-project-grid{min-width:0;opacity:var(--grid-opacity,0);pointer-events:none;transform:translate3d(0,var(--grid-y,100vh),0);will-change:transform,opacity;}
-  .featured-project-grid.is-reachable{pointer-events:auto;}
-  .featured-project-media{position:relative;isolation:isolate;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:8px;}
-  .featured-project-image{display:block;width:100%;height:100%;object-fit:cover;}
-  .featured-project-title{margin:0;color:#D20001;font-size:11px;font-weight:600;line-height:1.35;letter-spacing:.08em;text-transform:uppercase;}
-  .featured-project-description{margin:8px 0 0;max-width:46em;color:#1a1a1a;font-size:14px;line-height:1.5;}
-  .stride-collage{background:#FAF9F1;border:1px solid rgba(2,18,238,.2);}
-  .stride-collage-screen{position:absolute;top:7%;display:block;width:auto;height:86%;border:1px solid rgba(2,18,238,.16);border-radius:8px;box-shadow:0 10px 22px rgba(26,26,26,.12);}
-  .stride-collage-screen--home{left:26%;transform:rotate(-4deg);}
-  .stride-collage-screen--active{z-index:2;left:50%;top:5%;height:90%;transform:translateX(-50%) rotate(1deg);}
-  .stride-collage-screen--review{right:26%;transform:rotate(4deg);}
-  .featured-project-link:focus-visible{outline-offset:8px;}
-  @media (max-width:820px){
-    .featured-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .identity{margin-top:clamp(38px,5.2vw,72px);}
+  .identity-name{margin:0;color:#0212EE;font-size:clamp(44px,4.6vw,64px);font-weight:700;letter-spacing:-.045em;line-height:.84;}
+  .identity-name span{display:block;}
+  .identity-name-accent{width:max-content;max-width:100%;margin-top:.12em;background:#D20001;color:#fff;border-radius:7px;padding:0 .14em .06em;transform:rotate(-1.5deg);}
+  .identity-positioning{max-width:310px;margin:clamp(22px,2.5vw,30px) 0 0;color:#D20001;font-family:'Newsreader',Georgia,serif;font-size:clamp(20px,2vw,26px);font-style:italic;font-weight:500;letter-spacing:-.012em;line-height:1.22;}
+  .project-index{margin-top:clamp(34px,4vw,50px);}
+  .section-label{margin:0 0 12px;color:#D20001;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  .project-list{list-style:none;margin:0;padding:0;border-bottom:1px solid rgba(2,18,238,.28);}
+  .project-list-item{margin:0;padding:0;border-top:1px solid rgba(2,18,238,.28);}
+  .project-row{position:relative;display:grid;grid-template-columns:28px minmax(0,1fr) 8px;column-gap:11px;align-items:center;min-height:64px;padding:8px 3px;color:#1a1a1a;text-decoration:none;transition:color 160ms ease,background-color 160ms ease;}
+  .project-number{align-self:start;padding-top:6px;color:#6B6B66;font-size:10px;font-weight:600;letter-spacing:.1em;line-height:1.3;transition:color 160ms ease;}
+  .project-row-copy{display:block;min-width:0;}
+  .project-name{display:block;color:#0212EE;font-size:clamp(15px,1.35vw,18px);font-weight:700;letter-spacing:-.018em;line-height:1.15;transition:color 160ms ease;}
+  .project-category{display:block;margin-top:5px;color:#5D5D56;font-size:9px;font-weight:600;letter-spacing:.09em;line-height:1.4;text-transform:uppercase;}
+  .project-marker{width:6px;height:6px;border:1px solid #D20001;border-radius:50%;opacity:0;transform:scale(.55);transition:opacity 160ms ease,transform 160ms ease;}
+  .project-row:hover,.project-row:focus-visible,.project-row[aria-current="true"]{background:rgba(254,198,233,.22);}
+  .project-row:hover .project-name,.project-row:focus-visible .project-name,.project-row[aria-current="true"] .project-name{color:#D20001;}
+  .project-row:hover .project-number,.project-row:focus-visible .project-number,.project-row[aria-current="true"] .project-number{color:#D20001;}
+  .project-row[aria-current="true"] .project-marker{background:#D20001;opacity:1;transform:scale(1);}
+  .secondary-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:clamp(22px,2.8vw,34px);}
+  .secondary-link{display:inline-flex;align-items:center;min-height:44px;color:#0212EE;font-size:10px;font-weight:700;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;}
+  .secondary-link:hover{color:#D20001;}
+  .project-preview{align-self:start;min-width:0;padding-top:2px;}
+  .preview-heading{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:12px;}
+  .preview-heading-label{margin:0;color:#D20001;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  .preview-heading-number{color:#0212EE;font-size:11px;font-weight:700;letter-spacing:.12em;}
+  .project-preview-media{position:relative;width:100%;aspect-ratio:16/10;margin:0;overflow:hidden;background:#1C0712;border-radius:8px;}
+  .project-preview-image{display:block;width:100%;height:100%;object-fit:cover;object-position:center 5%;}
+  .project-preview-media--kith{background:#FEC6E9;}
+  .project-preview-media--kith .project-preview-image{object-position:center 48%;}
+  .project-preview-media--stride{background:#FAF9F1;border:1px solid rgba(2,18,238,.2);}
+  .project-preview-media--stride .project-preview-image{object-fit:contain;object-position:center;}
+  .project-preview-media--tiffany{background:#0212EE;}
+  .project-preview-media--tiffany .project-preview-image{object-position:center 40%;}
+  .preview-copy{display:grid;grid-template-columns:minmax(170px,.48fr) minmax(0,.52fr);gap:clamp(24px,3vw,42px);padding-top:clamp(20px,2.4vw,30px);}
+  .preview-category{margin:0;color:#D20001;font-size:10px;font-weight:700;letter-spacing:.12em;line-height:1.45;text-transform:uppercase;}
+  .preview-title{margin:10px 0 0;color:#0212EE;font-size:clamp(28px,3vw,42px);font-weight:700;letter-spacing:-.035em;line-height:.94;}
+  .preview-description{margin:0;color:#1a1a1a;font-size:clamp(13px,1.15vw,15px);line-height:1.6;}
+  .preview-link{display:inline-flex;align-items:center;min-height:44px;margin-top:16px;color:#D20001;font-size:12px;font-weight:600;text-decoration:none;}
+  .preview-link span{padding-bottom:4px;background-image:linear-gradient(#D20001,#D20001);background-position:0 100%;background-repeat:no-repeat;background-size:0 1px;transition:background-size 180ms ease;}
+  .preview-link:hover span,.preview-link:focus-visible span{background-size:100% 1px;}
+  .project-preview.is-updating .project-preview-media,.project-preview.is-updating .preview-copy{animation:preview-in 190ms ease-out both;}
+  @keyframes preview-in{
+    from{opacity:.72;transform:translateX(7px);}
+    to{opacity:1;transform:translateX(0);}
   }
-  @media (max-width:640px){
-    .home-stage{grid-template-columns:1fr;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);}
-    .home-opening,.featured-project-track{grid-column:1;grid-row:1;}
-    .home-title{font-size:clamp(66px,17vw,78px)!important;}
-    .see-work-button{min-height:48px;margin-top:24px;}
-    .featured-project-track{margin-top:170px;}
-    .featured-project-grid{grid-template-columns:1fr!important;gap:clamp(28px,8vw,40px)!important;}
+  @media (max-width:1020px){
+    .editorial-home{grid-template-columns:minmax(280px,.35fr) minmax(0,.65fr);gap:clamp(34px,4vw,48px);}
+    .preview-copy{grid-template-columns:1fr;gap:18px;}
+    .preview-title{max-width:520px;}
+    .preview-description{max-width:42em;}
+  }
+  @media (max-width:820px){
+    .page-shell{padding-bottom:52px;}
+    .editorial-home{display:block;max-width:680px;}
+    .identity{margin-top:clamp(34px,7vw,52px);}
+    .identity-name{font-size:clamp(48px,10vw,66px);}
+    .identity-positioning{max-width:390px;font-size:clamp(22px,4vw,27px);}
+    .project-index{margin-top:40px;}
+    .project-row{min-height:68px;}
+    .project-name{font-size:18px;}
+    .project-preview{margin-top:clamp(34px,6vw,48px);padding-top:0;}
+    .project-preview-media{aspect-ratio:16/10;}
+    .preview-copy{grid-template-columns:minmax(190px,.48fr) minmax(0,.52fr);gap:clamp(26px,5vw,40px);}
+  }
+  @media (max-width:560px){
+    .site-nav{gap:12px;}
+    .site-nav-links{gap:9px;}
+    .site-nav-link{font-size:10px;letter-spacing:.09em;}
+    .nav-dot{font-size:9px;}
+    .identity-name{font-size:clamp(46px,14.2vw,62px);}
+    .identity-positioning{font-size:clamp(21px,7vw,25px);}
+    .project-index{margin-top:34px;}
+    .project-row{grid-template-columns:26px minmax(0,1fr) 8px;column-gap:9px;min-height:66px;}
+    .project-name{font-size:17px;}
+    .secondary-links{gap:4px 18px;margin-top:18px;}
+    .project-preview{scroll-margin-top:16px;}
+    .project-preview-media{aspect-ratio:4/3;}
+    .project-preview-media--stride .project-preview-image{padding:8px 0;}
+    .preview-copy{grid-template-columns:1fr;gap:18px;padding-top:20px;}
+    .preview-title{font-size:clamp(30px,10vw,40px);}
+    .preview-description{font-size:14px;}
+  }
+  @media (max-width:340px){
+    .page-shell{padding-right:16px;padding-left:16px;}
+    .site-logo{padding-right:12px;padding-left:12px;}
+    .site-nav-links{gap:7px;}
+    .site-nav-link{font-size:9px;letter-spacing:.07em;}
+    .identity-name{font-size:44px;}
   }
   @media (prefers-reduced-motion:reduce){
-    .site-logo,.site-nav-link,.see-work-button{transition:none;}
-    .site-nav,.home-opening,.home-title,.home-tagline,.see-work-button,.featured-project-anchor,.featured-project-grid{will-change:auto;}
+    .site-logo,.site-nav-link,.project-row,.project-number,.project-name,.project-marker,.preview-link span{transition:none;}
+    .project-preview.is-updating .project-preview-media,.project-preview.is-updating .preview-copy{animation:none;}
+    html:focus-within{scroll-behavior:auto;}
   }
 </style>
-
 </head>
-<body style="margin:0;">
+<body>
 <a class="skip-link" href="#main-content">Skip to content</a>
-<div style="min-height:100vh;background:#F3F3E9;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#1a1a1a;display:flex;flex-direction:column;padding:clamp(20px,3vw,40px) clamp(20px,4vw,64px) clamp(40px,5vw,72px);overflow-x:hidden;">
+<div class="page-shell">
+  <main id="main-content" class="editorial-home">
+    <section class="home-left" aria-labelledby="home-title">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html" class="site-logo" aria-label="Vanessa Rubel, home">VR&nbsp;✦</a>
+        <div class="site-nav-links">
+          <a href="index.html" class="site-nav-link" aria-current="page">Home</a>
+          <span class="nav-dot" aria-hidden="true">·</span>
+          <a href="work.html" class="site-nav-link">Work</a>
+          <span class="nav-dot" aria-hidden="true">·</span>
+          <a href="about.html" class="site-nav-link">Info</a>
+        </div>
+      </nav>
 
-  <nav class="site-nav" aria-label="Primary navigation" style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;">
-    <a href="index.html" class="site-logo" aria-label="Vanessa Rubel, home" style="background:#0212EE;color:#FEC6E9;font-size:13px;font-weight:600;letter-spacing:.04em;padding:7px 15px;border-radius:22px;display:inline-block;transform:rotate(-3deg);text-decoration:none;">VR&nbsp;✦</a>
-    <div class="site-nav-links" style="display:flex;gap:clamp(16px,2.4vw,34px);align-items:center;padding-top:6px;">
-      <a href="index.html" class="site-nav-link" aria-current="page" style="color:#D20001;font-size:12px;letter-spacing:.14em;font-weight:600;text-decoration:none;text-transform:uppercase;">Home</a>
-      <span aria-hidden="true" style="color:#0212EE;opacity:.35;font-size:12px;">·</span>
-      <a href="work.html" class="site-nav-link" style="color:#0212EE;font-size:12px;letter-spacing:.14em;font-weight:600;text-decoration:none;text-transform:uppercase;">Work</a>
-      <span aria-hidden="true" style="color:#0212EE;opacity:.35;font-size:12px;">·</span>
-      <a href="about.html" class="site-nav-link" style="color:#0212EE;font-size:12px;letter-spacing:.14em;font-weight:600;text-decoration:none;text-transform:uppercase;">Info</a>
-    </div>
-  </nav>
+      <header class="identity">
+        <h1 id="home-title" class="identity-name">
+          <span>VANESSA</span>
+          <span class="identity-name-accent">RUBEL</span>
+        </h1>
+        <p class="identity-positioning">Connecting culture, strategy, and design.</p>
+      </header>
 
-  <main id="main-content" class="home-stage">
-  <div class="home-opening">
-  <header style="flex:0 0 auto;margin-top:clamp(20px,3.2vw,44px);">
-    <h1 class="home-title" style="margin:0;color:#0212EE;font-weight:700;font-size:clamp(68px,13.7vw,196px);line-height:.84;letter-spacing:-.035em;">
-      <span style="display:block;">VANESSA</span>
-      <span style="display:inline-block;background:#D20001;color:#fff;padding:0 .14em 0.04em;border-radius:9px;transform:rotate(-2.5deg);margin-top:.06em;">RUBEL</span>
-    </h1>
-    <p class="home-tagline" style="margin:clamp(18px,2vw,28px) 0 0;color:#D20001;font-size:clamp(15px,1.5vw,21px);font-weight:600;letter-spacing:-.005em;">Connecting culture, strategy, and design.</p>
-  </header>
+      <section class="project-index" aria-labelledby="selected-work-title">
+        <h2 id="selected-work-title" class="section-label">Selected Work</h2>
+        <ol class="project-list">
+          <li class="project-list-item">
+            <a
+              class="project-row"
+              href="project-concrete-runways.html"
+              aria-current="true"
+              data-project="concrete"
+              data-number="01"
+              data-category="Magazine design · Print · Concept"
+              data-title="Concrete Runways"
+              data-description="A print magazine exploring the intersections of fashion, sport culture, and streetwear, where editorial sophistication meets raw street energy."
+              data-image="images/concrete-runways/raw/concrete-runways-cover.jpg"
+              data-width="2516"
+              data-height="3256"
+              data-alt="Concrete Runways magazine cover with a city skyline and bold yellow title">
+              <span class="project-number">01</span>
+              <span class="project-row-copy">
+                <span class="project-name">Concrete Runways</span>
+                <span class="project-category">Magazine design · Print · Concept</span>
+              </span>
+              <span class="project-marker" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="project-list-item">
+            <a
+              class="project-row"
+              href="project-kith.html"
+              data-project="kith"
+              data-number="02"
+              data-category="Client experience · Fashion retail"
+              data-title="Kith: Client Experience &amp; Brand Insight"
+              data-description="Customer experience associate at Kith Miami Beach. Observing how a global brand builds culture, connection, and consistency across every touchpoint."
+              data-image="images/kith/HERO.webp"
+              data-width="2048"
+              data-height="1365"
+              data-alt="Kith Miami Beach interior with the KITH logo, central counter, and surrounding architecture">
+              <span class="project-number">02</span>
+              <span class="project-row-copy">
+                <span class="project-name">Kith</span>
+                <span class="project-category">Client experience · Fashion retail</span>
+              </span>
+              <span class="project-marker" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="project-list-item">
+            <a
+              class="project-row"
+              href="project-stride.html"
+              data-project="stride"
+              data-number="03"
+              data-category="Product direction · UX design · Workout app"
+              data-title="STRIDE: Designing for workouts that change"
+              data-description="A mobile workout planning and logging app designed around real training behavior, continuity, and speed."
+              data-image="images/stride/active-workout-editable.png"
+              data-width="402"
+              data-height="874"
+              data-alt="STRIDE Active Workout screen with editable strength and cardio entries during a three-exercise workout">
+              <span class="project-number">03</span>
+              <span class="project-row-copy">
+                <span class="project-name">STRIDE</span>
+                <span class="project-category">Product direction · UX design · Workout app</span>
+              </span>
+              <span class="project-marker" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="project-list-item">
+            <a
+              class="project-row"
+              href="project-tiffany-wendel.html"
+              data-project="tiffany"
+              data-number="04"
+              data-category="Stylist work · Digital strategy"
+              data-title="Tiffany Wendel: Digital Growth Strategy"
+              data-description="Partnered with stylist Tiffany Wendel to drive growth across Pinterest, LTK, and ShopMy by blending fashion expertise with strategic digital marketing."
+              data-image="images/tiffany-wendel/raw/tiffany-styling-collage-optimized.webp"
+              data-width="1206"
+              data-height="2622"
+              data-alt="Fashion styling collage with outfits, clothing racks, shoes, and accessories">
+              <span class="project-number">04</span>
+              <span class="project-row-copy">
+                <span class="project-name">Tiffany Wendel</span>
+                <span class="project-category">Stylist work · Digital strategy</span>
+              </span>
+              <span class="project-marker" aria-hidden="true"></span>
+            </a>
+          </li>
+        </ol>
+      </section>
 
-  <button class="see-work-button" type="button" aria-controls="selected-work" aria-expanded="false">See work&nbsp;↓</button>
-  </div>
+      <nav class="secondary-links" aria-label="More about Vanessa Rubel">
+        <a class="secondary-link" href="about.html">About</a>
+        <a class="secondary-link" href="resume/Vanessa Rubel Resume 2026.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a class="secondary-link" href="https://www.linkedin.com/in/vanessa-rubel" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </section>
 
-  <div class="featured-project-track">
-  <div class="featured-project-anchor">
-  <section id="selected-work" class="featured-project-grid" aria-label="Featured projects" aria-hidden="true" inert style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4vw,38px);align-items:start;">
-
-    <a href="project-stride.html" class="featured-project-link" style="text-decoration:none;color:inherit;"><figure style="margin:0;transform:rotate(1.4deg);">
-      <div class="featured-project-media stride-collage" role="img" aria-label="STRIDE product screens across the workout lifecycle">
-        <img class="stride-collage-screen stride-collage-screen--home" src="images/stride/home-dashboard.png" width="402" height="874" decoding="async" alt="">
-        <img class="stride-collage-screen stride-collage-screen--active" src="images/stride/active-workout-editable.png" width="402" height="874" fetchpriority="high" decoding="async" alt="">
-        <img class="stride-collage-screen stride-collage-screen--review" src="images/stride/workout-completion-review.png" width="402" height="874" decoding="async" alt="">
+    <article class="project-preview" aria-label="Active project preview" aria-live="polite">
+      <div class="preview-heading">
+        <p class="preview-heading-label">Active project</p>
+        <span class="preview-heading-number">01 / 04</span>
       </div>
-      <figcaption style="margin:11px 2px 0;">
-        <h2 class="featured-project-title">STRIDE: Product Design</h2>
-        <p class="featured-project-description">A mobile workout planning and logging app designed around real training behavior, continuity, and speed.</p>
-      </figcaption>
-    </figure></a>
-
-    <a href="project-concrete-runways.html" class="featured-project-link" style="text-decoration:none;color:inherit;"><figure style="margin:0;transform:rotate(-1.6deg);">
-      <div class="featured-project-media" style="background:#D20001;"><img class="featured-project-image" src="images/concrete-runways/raw/concrete-runways-cover.jpg" srcset="images/concrete-runways/raw/concrete-runways-cover.jpg 2516w" sizes="(max-width:640px) calc(100vw - 40px), min(46vw,571px)" width="2516" height="3256" loading="lazy" decoding="async" alt="Concrete Runways magazine cover with a city skyline and bold yellow title" style="object-position:top center;"></div>
-      <figcaption style="margin:11px 2px 0;">
-        <h2 class="featured-project-title">Concrete Runways</h2>
-        <p class="featured-project-description">A print magazine exploring the intersections of fashion, sport culture, and streetwear, where editorial sophistication meets raw street energy.</p>
-      </figcaption>
-    </figure></a>
-
-    <a href="project-tiffany-wendel.html" class="featured-project-link" style="text-decoration:none;color:inherit;"><figure style="margin:0;transform:rotate(2.4deg);margin-top:clamp(20px,3vw,52px);">
-      <div class="featured-project-media" role="img" aria-label="Fashion styling mood board with clothing racks, outfits, and accessories" style="background-image:url('images/tiffany-wendel/raw/tiffany-styling-collage-optimized.webp');background-size:cover;background-position:center 40%;background-repeat:no-repeat;background-color:#0212EE;"></div>
-      <figcaption style="margin:11px 2px 0;">
-        <h2 class="featured-project-title">Tiffany Wendel: Digital Growth Strategy</h2>
-        <p class="featured-project-description">Partnered with stylist Tiffany Wendel to drive growth across Pinterest, LTK, and ShopMy by blending fashion expertise with strategic digital marketing.</p>
-      </figcaption>
-    </figure></a>
-
-    <a href="project-kith.html" class="featured-project-link" style="text-decoration:none;color:inherit;"><figure style="margin:0;transform:rotate(-2deg);margin-top:clamp(8px,1.4vw,22px);">
-      <div class="featured-project-media" role="img" aria-label="Kith Miami Beach interior with a pale blue arched hallway" style="background-image:url('images/kith/HERO.webp');background-size:cover;background-position:center center;background-repeat:no-repeat;background-color:#FEC6E9;"></div>
-      <figcaption style="margin:11px 2px 0;">
-        <h2 class="featured-project-title">Kith: Client Experience &amp; Brand Insight</h2>
-        <p class="featured-project-description">Customer experience associate at Kith Miami Beach. Observing how a global brand builds culture, connection, and consistency across every touchpoint.</p>
-      </figcaption>
-    </figure></a>
-
-  </section>
-  </div>
-  </div>
+      <figure class="project-preview-media project-preview-media--concrete">
+        <img
+          class="project-preview-image"
+          src="images/concrete-runways/raw/concrete-runways-cover.jpg"
+          width="2516"
+          height="3256"
+          fetchpriority="high"
+          decoding="async"
+          alt="Concrete Runways magazine cover with a city skyline and bold yellow title">
+      </figure>
+      <div class="preview-copy">
+        <div>
+          <p class="preview-category">Magazine design · Print · Concept</p>
+          <h2 class="preview-title">Concrete Runways</h2>
+        </div>
+        <div>
+          <p class="preview-description">A print magazine exploring the intersections of fashion, sport culture, and streetwear, where editorial sophistication meets raw street energy.</p>
+          <a class="preview-link" href="project-concrete-runways.html"><span>View project&nbsp;↗</span></a>
+        </div>
+      </div>
+    </article>
   </main>
-
 </div>
 <script>
   (() => {
-    const stage = document.querySelector('.home-stage');
-    const navigation = document.querySelector('.site-nav');
-    const opening = document.querySelector('.home-opening');
-    const title = document.querySelector('.home-title');
-    const tagline = document.querySelector('.home-tagline');
-    const gridAnchor = document.querySelector('.featured-project-anchor');
-    const grid = document.getElementById('selected-work');
-    const seeWorkButton = document.querySelector('.see-work-button');
-    const homeLink = document.querySelector('.site-nav-link[aria-current="page"]');
-    const firstProject = grid.querySelector('.featured-project-link');
+    const rows = Array.from(document.querySelectorAll('.project-row'));
+    const preview = document.querySelector('.project-preview');
+    const previewMedia = preview.querySelector('.project-preview-media');
+    const previewImage = preview.querySelector('.project-preview-image');
+    const previewNumber = preview.querySelector('.preview-heading-number');
+    const previewCategory = preview.querySelector('.preview-category');
+    const previewTitle = preview.querySelector('.preview-title');
+    const previewDescription = preview.querySelector('.preview-description');
+    const previewLink = preview.querySelector('.preview-link');
+    const hoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const compactLayout = window.matchMedia('(max-width: 820px)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const mobileLayout = window.matchMedia('(max-width:640px)');
-    let transitionDistance = window.innerHeight;
-    let compactTitleScale = 1;
-    let compactTaglineScale = 1;
-    let compactShift = 0;
-    let frameRequested = false;
-    let measurementRequested = true;
-    let lastAnimationPosition = -1;
-    let gridReachableState;
-    let buttonHiddenState;
-    let buttonScrollActive = false;
-    let buttonScrollTimer;
+    let activeRow = rows[0];
+    let touchPointer = false;
 
-    const clamp = (value, minimum = 0, maximum = 1) => Math.min(maximum, Math.max(minimum, value));
-    const mix = (start, end, progress) => start + (end - start) * progress;
-    const toPixels = value => `${value.toFixed(3)}px`;
+    const selectProject = row => {
+      if (row === activeRow) return;
+      activeRow = row;
 
-    const setGridAccessibility = (reachable) => {
-      if (reachable === gridReachableState) return;
-      gridReachableState = reachable;
-      grid.classList.toggle('is-reachable', reachable);
-      grid.toggleAttribute('inert', !reachable);
-      grid.setAttribute('aria-hidden', String(!reachable));
-      grid.style.setProperty('--grid-opacity', Number(reachable));
-      seeWorkButton.setAttribute('aria-expanded', String(reachable));
-    };
+      rows.forEach(projectRow => {
+        if (projectRow === row) {
+          projectRow.setAttribute('aria-current', 'true');
+        } else {
+          projectRow.removeAttribute('aria-current');
+        }
+      });
 
-    const setButtonHidden = hidden => {
-      if (hidden === buttonHiddenState) return;
-      buttonHiddenState = hidden;
-      seeWorkButton.style.visibility = hidden ? 'hidden' : 'visible';
-      seeWorkButton.style.pointerEvents = hidden ? 'none' : 'auto';
-      if (hidden) {
-        seeWorkButton.setAttribute('aria-hidden', 'true');
-        seeWorkButton.setAttribute('tabindex', '-1');
-      } else {
-        seeWorkButton.removeAttribute('aria-hidden');
-        seeWorkButton.removeAttribute('tabindex');
+      previewMedia.className = `project-preview-media project-preview-media--${row.dataset.project}`;
+      previewImage.src = row.dataset.image;
+      previewImage.width = Number(row.dataset.width);
+      previewImage.height = Number(row.dataset.height);
+      previewImage.alt = row.dataset.alt;
+      previewNumber.textContent = `${row.dataset.number} / 04`;
+      previewCategory.textContent = row.dataset.category;
+      previewTitle.textContent = row.dataset.title;
+      previewDescription.textContent = row.dataset.description;
+      previewLink.href = row.href;
+
+      preview.classList.remove('is-updating');
+      if (!reducedMotion.matches) {
+        void preview.offsetWidth;
+        preview.classList.add('is-updating');
       }
     };
 
-    const measure = () => {
-      gridAnchor.style.setProperty('--grid-counter-y', '0px');
-      grid.style.setProperty('--grid-y', '0px');
-
-      const gridTopAtPageStart = grid.getBoundingClientRect().top + window.scrollY;
-      const openingTaglineSize = parseFloat(window.getComputedStyle(tagline).fontSize);
-      const compactTaglineSize = mobileLayout.matches ? 13 : 14;
-
-      transitionDistance = Math.max(320, window.innerHeight - gridTopAtPageStart);
-      compactTitleScale = mobileLayout.matches ? .58 : .24;
-      compactTaglineScale = compactTaglineSize / openingTaglineSize;
-      compactShift = mobileLayout.matches ? -57 : -258;
-
-      stage.style.setProperty('--transition-distance', toPixels(transitionDistance));
-      lastAnimationPosition = -1;
-    };
-
-    const render = () => {
-      const scrollPosition = Math.max(0, window.scrollY);
-      const animationPosition = Math.min(scrollPosition, transitionDistance);
-      if (animationPosition === lastAnimationPosition) return;
-      lastAnimationPosition = animationPosition;
-
-      const progress = clamp(animationPosition / transitionDistance);
-      const reduced = reducedMotion.matches;
-      const visualProgress = reduced ? Number(scrollPosition > 0) : progress;
-      const buttonOpacity = reduced ? Number(scrollPosition === 0) : clamp(1 - progress / .42);
-      const buttonHidden = reduced ? scrollPosition > 0 : progress >= .42;
-      const gridReachable = scrollPosition > 0;
-
-      navigation.style.setProperty('--nav-counter-y', toPixels(animationPosition));
-      opening.style.setProperty('--hero-counter-y', toPixels(animationPosition));
-      gridAnchor.style.setProperty('--grid-counter-y', toPixels(animationPosition));
-      title.style.setProperty('--title-scale', mix(1, compactTitleScale, visualProgress).toFixed(5));
-      tagline.style.setProperty('--tagline-y', toPixels(mix(0, compactShift, visualProgress)));
-      tagline.style.setProperty('--tagline-scale', mix(1, compactTaglineScale, visualProgress).toFixed(5));
-      seeWorkButton.style.setProperty('--button-y', toPixels(mix(0, compactShift, visualProgress)));
-      seeWorkButton.style.setProperty('--button-opacity', buttonOpacity.toFixed(5));
-      grid.style.setProperty('--grid-y', toPixels(transitionDistance * (1 - progress)));
-
-      if (!gridReachable && grid.contains(document.activeElement)) {
-        seeWorkButton.focus({ preventScroll: true });
-      }
-      setGridAccessibility(gridReachable);
-      setButtonHidden(buttonHidden);
-
-      if (buttonHidden && document.activeElement === seeWorkButton && !buttonScrollActive) {
-        firstProject.focus({ preventScroll: true });
-      }
-
-      if (buttonScrollActive && progress >= .98) {
-        buttonScrollActive = false;
-        window.clearTimeout(buttonScrollTimer);
-        firstProject.focus({ preventScroll: true });
-      }
-    };
-
-    const runFrame = () => {
-      frameRequested = false;
-      if (measurementRequested) {
-        measurementRequested = false;
-        measure();
-      }
-      render();
-    };
-
-    const requestFrame = () => {
-      if (frameRequested) return;
-      frameRequested = true;
-      window.requestAnimationFrame(runFrame);
-    };
-
-    const requestMeasure = () => {
-      measurementRequested = true;
-      requestFrame();
-    };
-
-    seeWorkButton.addEventListener('click', () => {
-      buttonScrollActive = true;
-      window.clearTimeout(buttonScrollTimer);
-      buttonScrollTimer = window.setTimeout(() => {
-        buttonScrollActive = false;
-      }, 1800);
-      window.scrollTo({
-        top: transitionDistance,
-        behavior: reducedMotion.matches ? 'auto' : 'smooth'
+    rows.forEach(row => {
+      row.addEventListener('pointerenter', () => {
+        if (hoverCapable.matches) selectProject(row);
+      });
+      row.addEventListener('focus', () => selectProject(row));
+      row.addEventListener('pointerdown', event => {
+        touchPointer = event.pointerType === 'touch' || event.pointerType === 'pen';
+      });
+      row.addEventListener('pointercancel', () => {
+        touchPointer = false;
+      });
+      row.addEventListener('click', event => {
+        if (event.detail === 0) {
+          touchPointer = false;
+          return;
+        }
+        if (!touchPointer && !compactLayout.matches) {
+          touchPointer = false;
+          return;
+        }
+        event.preventDefault();
+        selectProject(row);
+        preview.scrollIntoView({
+          behavior: reducedMotion.matches ? 'auto' : 'smooth',
+          block: 'start'
+        });
+        touchPointer = false;
       });
     });
 
-    homeLink.addEventListener('click', (event) => {
-      if (window.scrollY <= 1) return;
-      event.preventDefault();
-      buttonScrollActive = false;
-      window.clearTimeout(buttonScrollTimer);
-      window.scrollTo({
-        top: 0,
-        behavior: reducedMotion.matches ? 'auto' : 'smooth'
-      });
+    rows.slice(1).forEach(row => {
+      const image = new Image();
+      image.src = row.dataset.image;
     });
-
-    window.addEventListener('scroll', requestFrame, { passive: true });
-    window.addEventListener('resize', requestMeasure);
-    window.addEventListener('load', requestMeasure, { once: true });
-    reducedMotion.addEventListener('change', () => {
-      lastAnimationPosition = -1;
-      requestFrame();
-    });
-    mobileLayout.addEventListener('change', requestMeasure);
-    if (document.fonts) document.fonts.ready.then(requestMeasure);
-
-    requestMeasure();
   })();
 </script>
 </body>
